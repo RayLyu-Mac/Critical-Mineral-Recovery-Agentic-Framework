@@ -1,0 +1,87 @@
+
+Input file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\smoke_temp_water\20261023_083640_468745\03_make_phreeqc_deck\stage2_Na2CO3.phr
+
+Output file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\smoke_temp_water\20261023_083640_468745\04_run_phreeqc\stage2_Na2CO3.out
+
+Database file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\AgentLoopDemo\script\data\sit.dat
+
+              â–ˆâ–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–ˆ
+              â•‘                                            â•‘
+              â•‘             * PHREEQC-3.8.6 *              â•‘
+              â•‘                                            â•‘
+              â•‘      A hydrogeochemical transport model    â•‘
+              â•‘                                            â•‘
+              â•‘                    by                      â•‘
+              â•‘       D.L. Parkhurst and C.A.J. Appelo     â•‘
+              â•‘                                            â•‘
+              â•‘              January  7, 2025              â•‘
+              â–ˆâ–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–ˆ
+
+
+Initializing...                                                                 
+WARNING: Maximum iterations exceeded, 7000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying smaller step size, pe step size 10, 5 ... 
+
+
+Simulation 3. Reaction step 1.           /                                             
+WARNING: Maximum iterations exceeded, 14000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying reduced tolerance 1e-10 ...
+
+
+Simulation 3. Reaction step 1.           -                                             
+WARNING: Maximum iterations exceeded, 7000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying smaller step size, pe step size 10, 5 ... 
+
+
+Simulation 3. Reaction step 2.           /                                             
+WARNING: Maximum iterations exceeded, 14000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying reduced tolerance 1e-10 ...
+
+
+Simulation 3. Reaction step 2.           -                                             
+WARNING: Maximum iterations exceeded, 7000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying smaller step size, pe step size 10, 5 ... 
+
+
+Simulation 3. Reaction step 5.           \                                             
+WARNING: Maximum iterations exceeded, 14000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying reduced tolerance 1e-10 ...
+
+
+Simulation 3. Reaction step 5.           /                                             
+WARNING: Maximum iterations exceeded, 7000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying smaller step size, pe step size 10, 5 ... 
+
+
+Simulation 3. Reaction step 6.           \                                             
+WARNING: Maximum iterations exceeded, 14000
+
+WARNING: Numerical method failed with this set of convergence parameters.
+
+WARNING: Trying reduced tolerance 1e-10 ...
+
+
+Simulation 3. Reaction step 6.           /                                             
+
+End of Run after 22.627 Seconds.

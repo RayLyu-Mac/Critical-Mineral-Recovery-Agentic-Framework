@@ -1,0 +1,93 @@
+TITLE Ligand-free black mass, NaOH, 25 C, 1 kg water
+# BM_ADD batch. Reagent NaOH 4 mol. No ligand.
+# Deck hydroxides below carry delta_h and do not copy -analytic.
+
+PHASES
+Fe(OH)3(s)
+    Fe(OH)3 = Fe+3 - 3H+ + 3H2O
+    log_k 2.78
+    delta_h -88  # delta_h estimated; sit.dat Ferrihydrite(s) has log_k 2.78 and no delta_h
+Cu(OH)2(s)
+    Cu(OH)2 = Cu+2 - 2H+ + 2H2O
+    log_k 8.34
+    delta_h -62.764  # delta_h from sit.dat Cu(OH)2(s); log_k is the deck value (sit.dat is 8.64)
+Co(OH)2(s)
+    Co(OH)2 = Co+2 - 2H+ + 2H2O
+    log_k 13.11
+    delta_h -93.56  # delta_h from sit.dat Co(OH)2(s,rose2)
+Ni(OH)2(s)
+    Ni(OH)2 = Ni+2 - 2H+ + 2H2O
+    log_k 13.3
+    delta_h -84.389  # delta_h from sit.dat Ni(OH)2(s); log_k is the deck value (sit.dat is 11.03)
+Mn(OH)2(s)
+    Mn(OH)2 = Mn+2 - 2H+ + 2H2O
+    log_k 15.28
+    delta_h -92  # delta_h estimated; sit.dat Pyrochroite has log_k 15.3 and no delta_h
+
+KNOBS
+    -iterations 7000
+    -convergence_tolerance 1e-6
+    -tolerance             1e-9
+
+# STAGE A
+SOLUTION 1 leachate
+    temp      25
+    pH        7 charge
+    water     1
+    units     mol/kgw
+REACTION 1
+    Al2(SO4)3       2.8642408e-02
+    Fe2(SO4)3       7.0141362e-03
+    CuSO4           5.7640499e-02
+    CoSO4:7H2O      1.9850587e-01
+    NiSO4:6H2O      3.8959063e-01
+    MnSO4:H2O       1.7394391e-01
+    Li2SO4:H2O      1.0081275e-01
+    1.0
+SELECTED_OUTPUT 1
+    -file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/step_chain/04_run_phreeqc/stage_A_feed.csv
+    -reset  true
+    -pH     true
+    -pe     true
+    -temperature true
+    -ionic_strength true
+    -totals Al Fe Cu Co Ni Mn Li Na S
+    -si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+SAVE solution 1
+END
+
+SELECTED_OUTPUT 1
+    -active false
+END
+
+# STAGE 1 incremental
+USE solution 1
+INCREMENTAL_REACTIONS true
+EQUILIBRIUM_PHASES 1
+    Gibbsite  0.0  0
+    Fe(OH)3(s)  0.0  0
+    Cu(OH)2(s)  0.0  0
+    Co(OH)2(s)  0.0  0
+    Ni(OH)2(s)  0.0  0
+    Mn(OH)2(s)  0.0  0
+REACTION 2
+    Na+             1
+    OH-             1
+    4.0000000e+00 moles in 20 steps
+SELECTED_OUTPUT 2
+    -file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/step_chain/04_run_phreeqc/stage_1_NaOH.csv
+    -reset  true
+    -pH     true
+    -pe     true
+    -temperature true
+    -ionic_strength true
+    -totals Al Fe Cu Co Ni Mn Li Na S
+    -equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+    -si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+USER_PUNCH 2
+    -headings seq reagent_cum_mol bm_cum_frac
+    10 PUNCH STEP_NO, (0.2)*STEP_NO, 1
+END
+
+INCREMENTAL_REACTIONS false
+END

@@ -1,0 +1,556 @@
+{
+  "query": {
+    "ligand": "no ligand",
+    "salts": [
+      "sulfate"
+    ],
+    "reagent": "Na2CO3",
+    "metals": [
+      "Al",
+      "Fe",
+      "Cu",
+      "Co",
+      "Ni",
+      "Mn",
+      "Li"
+    ]
+  },
+  "ligand": {
+    "ligand": "no ligand",
+    "source": "none",
+    "species": [],
+    "note": "No ligand. No ligand constants were read."
+  },
+  "salts": [
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Al+3 + SO4-2 = Al(SO4)+",
+      "log_k": 3.17,
+      "delta_h_kJ_mol": 18.869,
+      "metals": [
+        "Al"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Co+2 + SO4-2 = CoSO4",
+      "log_k": 2.3,
+      "delta_h_kJ_mol": 2.092,
+      "metals": [
+        "Co"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Cu+2 + SO4-2 = CuSO4",
+      "log_k": 2.31,
+      "delta_h_kJ_mol": 5.102,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Fe+2 + SO4-2 = Fe(SO4)",
+      "log_k": 2.44,
+      "delta_h_kJ_mol": 8.4,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Fe+3 + SO4-2 = Fe(SO4)+",
+      "log_k": 4.25,
+      "delta_h_kJ_mol": 26.0,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Fe+3 + 2 SO4-2 = Fe(SO4)2-",
+      "log_k": 6.22,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Mn+2 + SO4-2 = Mn(SO4)",
+      "log_k": 2.25,
+      "delta_h_kJ_mol": 14.1,
+      "metals": [
+        "Mn"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Ni+2 + SO4-2 = Ni(SO4)",
+      "log_k": 2.35,
+      "delta_h_kJ_mol": 5.66,
+      "metals": [
+        "Ni"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "aqueous",
+      "reaction": "Ni+2 + 2 SO4-2 = Ni(SO4)2-2",
+      "log_k": 3.01,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Ni"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Antlerite",
+      "reaction": "Cu3SO4(OH)4 = 3 Cu+2 - 4 H+ + SO4-2 + 4 H2O",
+      "log_k": 8.91,
+      "delta_h_kJ_mol": -117.063,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Bieberite",
+      "reaction": "CoSO4:7H2O = Co+2 + SO4-2 + 7 H2O",
+      "log_k": -2.35,
+      "delta_h_kJ_mol": 11.84,
+      "metals": [
+        "Co"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Brochantite",
+      "reaction": "Cu4SO4(OH)6 = 4 Cu+2 - 6 H+ + SO4-2 + 6 H2O",
+      "log_k": 15.54,
+      "delta_h_kJ_mol": -176.191,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Chalcanthite",
+      "reaction": "CuSO4:5H2O = Cu+2 + SO4-2 + 5 H2O",
+      "log_k": -2.69,
+      "delta_h_kJ_mol": 6.108,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Chalcocyanite",
+      "reaction": "CuSO4 = Cu+2 + SO4-2",
+      "log_k": 2.94,
+      "delta_h_kJ_mol": -73.025,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "CoSO4(s)",
+      "reaction": "CoSO4 = Co+2 + SO4-2",
+      "log_k": 3.01,
+      "delta_h_kJ_mol": -78.68,
+      "metals": [
+        "Co"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "CoSO4:6H2O(s)",
+      "reaction": "CoSO4:6H2O = Co+2 + SO4-2 + 6 H2O",
+      "log_k": -2.2,
+      "delta_h_kJ_mol": 1.57,
+      "metals": [
+        "Co"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "CoSO4:H2O(s)",
+      "reaction": "CoSO4:H2O = Co+2 + SO4-2 + H2O",
+      "log_k": -1.05,
+      "delta_h_kJ_mol": -52.05,
+      "metals": [
+        "Co"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Ettringite",
+      "reaction": "Ca6Al2(SO4)3(OH)12:26H2O = 6 Ca+2 + 2 Al+3 - 12 H+ + 3 SO4-2 + 38 H2O",
+      "log_k": 56.97,
+      "delta_h_kJ_mol": -379.83,
+      "metals": [
+        "Al"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Ettringite-Fe",
+      "reaction": "Ca6Fe2(SO4)3(OH)12:26H2O = 6 Ca+2 + 2 Fe+3 - 12 H+ + 3 SO4-2 + 38 H2O",
+      "log_k": 54.55,
+      "delta_h_kJ_mol": -346.706,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "GR-SO4",
+      "reaction": "Fe4Fe2(OH)12SO4 = 6 Fe+2 - 12 H+ - 2 e- + SO4-2 + 12 H2O",
+      "log_k": 58.3,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "KAl(SO4)2(s)",
+      "reaction": "KAl(SO4)2 = K+ + Al+3 + 2 SO4-2",
+      "log_k": 3.74,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Al"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "KAl(SO4)2:12H2O(s)",
+      "reaction": "KAl(SO4)2:12H2O = K+ + Al+3 + 2 SO4-2 + 12 H2O",
+      "log_k": -6.68,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Al"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Langite",
+      "reaction": "Cu4SO4(OH)6:H2O = 4 Cu+2 - 6 H+ + SO4-2 + 7 H2O",
+      "log_k": 17.49,
+      "delta_h_kJ_mol": -165.074,
+      "metals": [
+        "Cu"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Melanterite",
+      "reaction": "FeSO4:7H2O = Fe+2 + SO4-2 + 7 H2O",
+      "log_k": -2.28,
+      "delta_h_kJ_mol": 12.067,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Mn(SO4)(s)",
+      "reaction": "Mn(SO4) = Mn+2 + SO4-2",
+      "log_k": -2.68,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Mn"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Monosulfate-Fe",
+      "reaction": "Ca4Fe2(SO4)(OH)12:6H2O = 4 Ca+2 + 2 Fe+3 - 12 H+ + SO4-2 + 18 H2O",
+      "log_k": 66.05,
+      "delta_h_kJ_mol": -479.966,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Monosulfoaluminate",
+      "reaction": "Ca4Al2(SO4)(OH)12:6H2O = 4 Ca+2 + 2 Al+3 - 12 H+ + SO4-2 + 18 H2O",
+      "log_k": 73.07,
+      "delta_h_kJ_mol": -539.4,
+      "metals": [
+        "Al"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Ni(SO4)(cr)",
+      "reaction": "Ni(SO4) = Ni+2 + SO4-2",
+      "log_k": 4.75,
+      "delta_h_kJ_mol": -91.072,
+      "metals": [
+        "Ni"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Ni(SO4):6H2O(s)",
+      "reaction": "Ni(SO4):6H2O = Ni+2 + SO4-2 + 6 H2O",
+      "log_k": -2.25,
+      "delta_h_kJ_mol": 4.485,
+      "metals": [
+        "Ni"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Ni(SO4):7H2O(s)",
+      "reaction": "Ni(SO4):7H2O = Ni+2 + SO4-2 + 7 H2O",
+      "log_k": -2.27,
+      "delta_h_kJ_mol": 12.167,
+      "metals": [
+        "Ni"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": "phase",
+      "phase": "Schwertmannite(cr)",
+      "reaction": "Fe8O8(OH)6SO4 = 8 Fe+3 - 22 H+ + SO4-2 + 14 H2O",
+      "log_k": 8.72,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Fe"
+      ],
+      "source": "sit.dat"
+    },
+    {
+      "salt": "sulfate",
+      "kind": null,
+      "phase": null,
+      "reaction": null,
+      "log_k": null,
+      "delta_h_kJ_mol": null,
+      "metals": [
+        "Li"
+      ],
+      "source": null,
+      "note": "No stored salt constant for this metal."
+    }
+  ],
+  "reagent": {
+    "name": "Na2CO3",
+    "enabled": true,
+    "missing": [],
+    "reaction": {
+      "Na+": 2.0,
+      "CO3-2": 1.0
+    },
+    "companion": {},
+    "phases": [
+      {
+        "phase": "Ni(CO3):5.5H2O(cr)",
+        "reaction": "Ni(CO3):5.5H2O = Ni+2 + CO3-2 + 5.5 H2O",
+        "log_k": -7.52,
+        "delta_h_kJ_mol": 10.687,
+        "metals": [
+          "Ni"
+        ],
+        "source": "sit.dat",
+        "note": null
+      },
+      {
+        "phase": "Sphaerocobaltite",
+        "reaction": "CoCO3 = Co+2 + CO3-2",
+        "log_k": -11.2,
+        "delta_h_kJ_mol": -9.421,
+        "metals": [
+          "Co"
+        ],
+        "source": "sit.dat",
+        "note": null
+      },
+      {
+        "phase": "Rhodochrosite",
+        "reaction": "Mn(CO3) = Mn+2 + CO3-2",
+        "log_k": -11.13,
+        "delta_h_kJ_mol": -5.899,
+        "metals": [
+          "Mn"
+        ],
+        "source": "sit.dat",
+        "note": null
+      },
+      {
+        "phase": "Li2CO3",
+        "reaction": null,
+        "log_k": null,
+        "delta_h_kJ_mol": null,
+        "metals": [
+          "Li"
+        ],
+        "source": null,
+        "note": "Phase name is not in sit.dat or the deck header."
+      },
+      {
+        "phase": "Ni(OH)2(s)",
+        "reaction": "Ni(OH)2 = Ni+2 - 2H+ + 2H2O",
+        "log_k": 13.3,
+        "delta_h_kJ_mol": -84.389,
+        "metals": [
+          "Ni"
+        ],
+        "source": "data/phreeqc_io.py",
+        "note": null,
+        "sit_log_k": 11.03
+      },
+      {
+        "phase": "Co(OH)2(s)",
+        "reaction": "Co(OH)2 = Co+2 - 2H+ + 2H2O",
+        "log_k": 13.11,
+        "delta_h_kJ_mol": null,
+        "metals": [
+          "Co"
+        ],
+        "source": "data/phreeqc_io.py",
+        "note": null
+      },
+      {
+        "phase": "Mn(OH)2(s)",
+        "reaction": "Mn(OH)2 = Mn+2 - 2H+ + 2H2O",
+        "log_k": 15.28,
+        "delta_h_kJ_mol": null,
+        "metals": [
+          "Mn"
+        ],
+        "source": "data/phreeqc_io.py",
+        "note": null
+      },
+      {
+        "phase": "Cu(OH)2(s)",
+        "reaction": "Cu(OH)2 = Cu+2 - 2H+ + 2H2O",
+        "log_k": 8.34,
+        "delta_h_kJ_mol": -62.764,
+        "metals": [
+          "Cu"
+        ],
+        "source": "data/phreeqc_io.py",
+        "note": null,
+        "sit_log_k": 8.64
+      },
+      {
+        "phase": null,
+        "reaction": null,
+        "log_k": null,
+        "delta_h_kJ_mol": null,
+        "metals": [
+          "Al"
+        ],
+        "source": null,
+        "note": "No stored reagent phase for this metal."
+      },
+      {
+        "phase": null,
+        "reaction": null,
+        "log_k": null,
+        "delta_h_kJ_mol": null,
+        "metals": [
+          "Fe"
+        ],
+        "source": null,
+        "note": "No stored reagent phase for this metal."
+      }
+    ],
+    "source": "sources/md/attari2026graphical.md; CarbonateTest stage 2"
+  },
+  "unavailable": {
+    "ligand": [],
+    "salts": [
+      {
+        "salt": "sulfate",
+        "metal": "Li"
+      }
+    ],
+    "reagent": [
+      {
+        "phase": "Li2CO3",
+        "metals": [
+          "Li"
+        ]
+      },
+      {
+        "phase": null,
+        "metals": [
+          "Al"
+        ]
+      },
+      {
+        "phase": null,
+        "metals": [
+          "Fe"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,2793 @@
+   Input file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\smoke_staged\20261023_083259_223093\03_make_phreeqc_deck\stage1_NaOH.phr
+  Output file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\smoke_staged\20261023_083259_223093\04_run_phreeqc\stage1_NaOH.out
+Database file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\AgentLoopDemo\script\data\sit.dat
+
+------------------
+Reading data base.
+------------------
+
+	SOLUTION_SPECIES
+	SOLUTION_MASTER_SPECIES
+	SIT
+	SOLUTION_SPECIES
+	PHASES
+------------------------------------
+Reading input data for simulation 1.
+------------------------------------
+
+	TITLE Ligand-free black mass, NaOH, 25 C, 1 kg water
+	PHASES
+	Fe(OH)3(s)
+	    Fe(OH)3 = Fe+3 - 3H+ + 3H2O
+	    log_k 2.78
+	    delta_h -88  # delta_h estimated; sit.dat Ferrihydrite(s) has log_k 2.78 and no delta_h
+	Cu(OH)2(s)
+	    Cu(OH)2 = Cu+2 - 2H+ + 2H2O
+	    log_k 8.34
+	    delta_h -62.764  # delta_h from sit.dat Cu(OH)2(s); log_k is the deck value (sit.dat is 8.64)
+	Co(OH)2(s)
+	    Co(OH)2 = Co+2 - 2H+ + 2H2O
+	    log_k 13.11
+	    delta_h -93.56  # delta_h from sit.dat Co(OH)2(s,rose2)
+	Ni(OH)2(s)
+	    Ni(OH)2 = Ni+2 - 2H+ + 2H2O
+	    log_k 13.3
+	    delta_h -84.389  # delta_h from sit.dat Ni(OH)2(s); log_k is the deck value (sit.dat is 11.03)
+	Mn(OH)2(s)
+	    Mn(OH)2 = Mn+2 - 2H+ + 2H2O
+	    log_k 15.28
+	    delta_h -92  # delta_h estimated; sit.dat Pyrochroite has log_k 15.3 and no delta_h
+	KNOBS
+	    iterations 7000
+	    convergence_tolerance 1e-6
+	    tolerance             1e-9
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	SELECTED_OUTPUT 1
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_A_feed.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	SAVE solution 1
+	END
+-----
+TITLE
+-----
+
+ Ligand-free black mass, NaOH, 25 C, 1 kg water
+
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 2.
+------------------------------------
+
+	SELECTED_OUTPUT 1
+	    active false
+	END
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 3.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       9.5474694e-03
+	    Fe2(SO4)3       2.3380454e-03
+	    CuSO4           1.9213500e-02
+	    CoSO4:7H2O      6.6168623e-02
+	    NiSO4:6H2O      1.2986354e-01
+	    MnSO4:H2O       5.7981304e-02
+	    Li2SO4:H2O      3.3604251e-02
+	    Na+             6.6666667e-01
+	    OH-             6.6666667e-01
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 1, 0.666666666667, 0.333333333333
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.00955
+	CoSO4:7H2O           0.06617
+	CuSO4                0.01921
+	Fe2(SO4)3            0.00234
+	Li2SO4:H2O           0.03360
+	MnSO4:H2O            0.05798
+	Na+                  0.66667
+	NiSO4:6H2O           0.12986
+	OH-                  0.66667
+
+	                 Relative
+	Element             moles
+	Al                   0.01909
+	Co                   0.06617
+	Cu                   0.01921
+	Fe                   0.00468
+	H                    3.33456
+	Li                   0.06721
+	Mn                   0.05798
+	Na                   0.66667
+	Ni                   0.12986
+	O                    3.37056
+	S                    0.34249
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)        0.00    13.11     13.11    0.000e+00   6.616e-02   6.616e-02
+Cu(OH)2(s)        0.00     8.34      8.34    0.000e+00   1.921e-02   1.921e-02
+Fe(OH)3(s)       -0.00     2.78      2.78    0.000e+00   4.675e-03   4.675e-03
+Gibbsite          0.00     7.74      7.74    0.000e+00   1.540e-02   1.540e-02
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   5.798e-02   5.798e-02
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   1.298e-01   1.298e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                3.613e-03   3.700e-03
+	Co                4.472e-06   4.580e-06
+	Cu                4.156e-06   4.255e-06
+	Fe                7.094e-07   7.264e-07
+	Li                6.563e-02   6.721e-02
+	Mn                8.499e-07   8.703e-07
+	Na                6.510e-01   6.667e-01
+	Ni                1.996e-05   2.044e-05
+	S                 3.345e-01   3.425e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  12.471      Charge balance
+                                       pe  =   1.913      Adjusted to redox equilibrium
+                        Activity of water  =   0.985
+                 Ionic strength (mol/kgw)  =   1.051e+00
+                       Mass of water (kg)  =   1.024e+00
+                 Total alkalinity (eq/kg)  =   5.865e-02
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -2.748e-13
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  39
+                         Gamma iterations  =   7
+                      Osmotic coefficient  =   0.76959
+                                  Total H  = 1.137453e+02
+                                  Total O  = 5.827264e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             4.413e-02   2.916e-02    -1.355    -1.535    -0.180     (0)  
+   H+              5.428e-13   3.378e-13   -12.265   -12.471    -0.206      0.00
+   H2O             5.551e+01   9.849e-01     1.744    -0.007     0.000     18.07
+Al            3.613e-03
+   Al(OH)4-        3.474e-03   2.161e-03    -2.459    -2.665    -0.206     (0)  
+   NaAl(OH)4       1.393e-04   1.393e-04    -3.856    -3.856     0.000     (0)  
+   Al(OH)3         2.089e-09   2.089e-09    -8.680    -8.680     0.000     (0)  
+   Al(OH)2+        7.967e-16   4.957e-16   -15.099   -15.305    -0.206     (0)  
+   Al(OH)+2        4.838e-22   7.253e-23   -21.315   -22.139    -0.824     (0)  
+   Al(SO4)+        2.207e-28   1.374e-28   -27.656   -27.862    -0.206     (0)  
+   Al+3            1.585e-28   2.217e-30   -27.800   -29.654    -1.854     (0)  
+Co            4.472e-06
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)3-        1.204e-06   7.495e-07    -5.919    -6.125    -0.206     (0)  
+   Co(OH)4-2       2.777e-08   4.164e-09    -7.556    -8.381    -0.824     (0)  
+   Co(OH)+         4.181e-09   2.602e-09    -8.379    -8.585    -0.206     (0)  
+   CoSO4           1.266e-11   1.266e-11   -10.897   -10.897     0.000     (0)  
+   Co+2            1.011e-11   1.515e-12   -10.995   -11.819    -0.824     (0)  
+   Co2(OH)+3       7.080e-20   9.903e-22   -19.150   -21.004    -1.854     (0)  
+   Co4(OH)4+4      9.943e-25   5.024e-28   -24.002   -27.299    -3.297     (0)  
+   CoHS+           0.000e+00   0.000e+00  -101.151  -101.357    -0.206     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -113.939  -113.939     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -193.464  -193.464     0.000     (0)  
+Cu(1)         1.846e-09
+   Cu(OH)2-        1.833e-09   1.140e-09    -8.737    -8.943    -0.206     (0)  
+   CuOH            1.295e-11   1.295e-11   -10.888   -10.888     0.000     (0)  
+   Cu+             3.417e-16   2.126e-16   -15.466   -15.672    -0.206     (0)  
+   CuHS            0.000e+00   0.000e+00   -97.880   -97.880     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -109.506  -109.712    -0.206     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -188.701  -188.907    -0.206     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -273.801  -274.625    -0.824     (0)  
+Cu(2)         4.154e-06
+   Cu(OH)3-        2.403e-06   1.495e-06    -5.619    -5.825    -0.206     (0)  
+   Cu(OH)4-2       1.738e-06   3.463e-07    -5.760    -6.461    -0.700     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         1.292e-12   8.040e-13   -11.889   -12.095    -0.206     (0)  
+   CuSO4           2.201e-16   2.201e-16   -15.657   -15.657     0.000     (0)  
+   Cu+2            1.716e-16   2.573e-17   -15.765   -16.589    -0.824     (0)  
+   Cu2(OH)2+2      1.058e-18   1.587e-19   -17.975   -18.799    -0.824     (0)  
+   Cu3(OH)4+2      9.433e-21   1.414e-21   -20.025   -20.849    -0.824     (0)  
+   Cu2(OH)+3       2.692e-26   3.765e-28   -25.570   -27.424    -1.854     (0)  
+Fe(2)         1.459e-19
+   Fe(OH)4-2       7.691e-20   1.153e-20   -19.114   -19.938    -0.824     (0)  
+   Fe(OH)2         4.096e-20   4.096e-20   -19.388   -19.388     0.000     (0)  
+   Fe(OH)3-        1.919e-20   1.194e-20   -19.717   -19.923    -0.206     (0)  
+   Fe(OH)+         8.782e-21   5.465e-21   -20.056   -20.262    -0.206     (0)  
+   Fe(SO4)         3.845e-23   3.845e-23   -22.415   -22.415     0.000     (0)  
+   Fe+2            2.223e-23   3.333e-24   -22.653   -23.477    -0.824     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -114.138  -114.344    -0.206     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -207.441  -207.441     0.000     (0)  
+Fe(3)         7.094e-07
+   Fe(OH)4-        7.092e-07   4.413e-07    -6.149    -6.355    -0.206     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        5.264e-15   3.275e-15   -14.279   -14.485    -0.206     (0)  
+   Fe(OH)+2        3.347e-24   5.018e-25   -23.475   -24.299    -0.824     (0)  
+   Fe(SO4)2-       1.138e-31   7.079e-32   -30.944   -31.150    -0.206     (0)  
+   Fe(SO4)+        2.910e-32   1.811e-32   -31.536   -31.742    -0.206     (0)  
+   Fe+3            1.738e-33   2.431e-35   -32.760   -34.614    -1.854     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -43.822   -47.119    -3.297     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -55.133   -60.284    -5.151     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -134.678  -134.884    -0.206     (0)  
+H(0)          2.834e-32
+   H2              1.417e-32   1.417e-32   -31.849   -31.849     0.000     (0)  
+Li            6.563e-02
+   Li+             6.563e-02   4.084e-02    -1.183    -1.389    -0.206     (0)  
+Mn(2)         8.499e-07
+   Mn2(OH)3+       2.519e-07   1.568e-07    -6.599    -6.805    -0.206     (0)  
+   Mn(OH)3-        1.415e-07   8.805e-08    -6.849    -7.055    -0.206     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn(OH)4-2       5.415e-08   8.119e-09    -7.266    -8.091    -0.824     (0)  
+   Mn(OH)+         2.700e-08   1.680e-08    -7.569    -7.775    -0.206     (0)  
+   Mn(SO4)         1.670e-09   1.670e-09    -8.777    -8.777     0.000     (0)  
+   Mn+2            1.495e-09   2.241e-10    -8.825    -9.649    -0.824     (0)  
+   Mn2(OH)+3       8.319e-16   1.163e-17   -15.080   -16.934    -1.854     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -111.919  -111.919     0.000     (0)  
+Mn(3)         4.052e-32
+   Mn+3            4.052e-32   5.668e-34   -31.392   -33.247    -1.854     (0)  
+Mn(5)         4.875e-16
+   MnO4-3          4.875e-16   6.819e-18   -15.312   -17.166    -1.854     (0)  
+Mn(6)         1.383e-20
+   MnO4-2          1.383e-20   2.073e-21   -19.859   -20.683    -0.824     (0)  
+Mn(7)         1.136e-28
+   MnO4-           1.136e-28   7.072e-29   -27.944   -28.150    -0.206     (0)  
+Na            6.510e-01
+   Na+             6.509e-01   3.708e-01    -0.186    -0.431    -0.244     (0)  
+   NaAl(OH)4       1.393e-04   1.393e-04    -3.856    -3.856     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -103.785  -103.991    -0.206     (0)  
+Ni            1.996e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         3.172e-09   1.974e-09    -8.499    -8.705    -0.206     (0)  
+   Ni(SO4)2-2      4.169e-11   4.214e-12   -10.380   -11.375    -0.995     (0)  
+   Ni(SO4)         2.201e-11   2.201e-11   -10.657   -10.657     0.000     (0)  
+   Ni+2            1.565e-11   2.347e-12   -10.805   -11.629    -0.824     (0)  
+   Ni2(OH)+3       2.884e-20   4.034e-22   -19.540   -21.394    -1.854     (0)  
+   Ni4(OH)4+4      1.311e-21   6.622e-25   -20.882   -24.179    -3.297     (0)  
+   NiHS+           0.000e+00   0.000e+00  -101.131  -101.337    -0.206     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -113.739  -113.739     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -190.944  -190.944     0.000     (0)  
+O(0)          6.838e-29
+   O2              3.419e-29   3.419e-29   -28.466   -28.466     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00   -95.001   -95.207    -0.206     (0)  
+   CuHS            0.000e+00   0.000e+00   -97.880   -97.880     0.000     (0)  
+   S-2             0.000e+00   0.000e+00   -99.012   -99.836    -0.824     (0)  
+   H2S             0.000e+00   0.000e+00  -100.688  -100.688     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -101.131  -101.337    -0.206     (0)  
+   CoHS+           0.000e+00   0.000e+00  -101.151  -101.357    -0.206     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -114.138  -114.344    -0.206     (0)  
+   S2-2            0.000e+00   0.000e+00  -171.361  -172.186    -0.824     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -188.701  -188.907    -0.206     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -190.944  -190.944     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -193.464  -193.464     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -207.441  -207.441     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -246.241  -247.065    -0.824     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -273.801  -274.625    -0.824     (0)  
+   S4-2            0.000e+00   0.000e+00  -322.221  -323.045    -0.824     (0)  
+   S5-2            0.000e+00   0.000e+00  -398.421  -399.245    -0.824     (0)  
+S(2)          0.000e+00
+   S2O3-2          0.000e+00   0.000e+00  -103.346  -104.170    -0.824     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -103.785  -103.991    -0.206     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -109.506  -109.712    -0.206     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -111.919  -111.919     0.000     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -113.739  -113.739     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -113.939  -113.939     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -114.715  -114.921    -0.206     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -126.792  -126.792     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -134.678  -134.884    -0.206     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -102.454  -103.278    -0.824     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -113.043  -113.249    -0.206     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -125.421  -125.421     0.000     (0)  
+S(4)          1.307e-33
+   SO3-2           1.307e-33   1.738e-34   -32.884   -33.760    -0.876     (0)  
+   H(SO3)-         1.396e-39   8.685e-40   -38.855   -39.061    -0.206     (0)  
+   SO2             0.000e+00   0.000e+00   -49.666   -49.666     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -49.673   -49.673     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -78.782   -79.606    -0.824     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -142.270  -143.094    -0.824     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -204.509  -205.334    -0.824     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -296.139  -296.963    -0.824     (0)  
+S(6)          3.345e-01
+   SO4-2           3.345e-01   4.189e-02    -0.476    -1.378    -0.902     (0)  
+   Mn(SO4)         1.670e-09   1.670e-09    -8.777    -8.777     0.000     (0)  
+   Ni(SO4)2-2      4.169e-11   4.214e-12   -10.380   -11.375    -0.995     (0)  
+   Ni(SO4)         2.201e-11   2.201e-11   -10.657   -10.657     0.000     (0)  
+   CoSO4           1.266e-11   1.266e-11   -10.897   -10.897     0.000     (0)  
+   H(SO4)-         2.204e-12   1.351e-12   -11.657   -11.869    -0.213     (0)  
+   CuSO4           2.201e-16   2.201e-16   -15.657   -15.657     0.000     (0)  
+   Fe(SO4)         3.845e-23   3.845e-23   -22.415   -22.415     0.000     (0)  
+   Al(SO4)+        2.207e-28   1.374e-28   -27.656   -27.862    -0.206     (0)  
+   Fe(SO4)2-       1.138e-31   7.079e-32   -30.944   -31.150    -0.206     (0)  
+   Fe(SO4)+        2.910e-32   1.811e-32   -31.536   -31.742    -0.206     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -63.486   -64.310    -0.824     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -45.091   -45.297    -0.206     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -120.82    -35.39   85.43  Al
+  Alabandite      -93.29    -92.39    0.90  MnS
+  Antlerite       -10.20     -1.29    8.91  Cu3SO4(OH)4
+  Bieberite       -10.89    -13.24   -2.35  CoSO4:7H2O
+  Boehmite          0.13      7.75    7.62  AlO(OH)
+  Brochantite      -8.49      7.05   15.54  Cu4SO4(OH)6
+  Bunsenite         0.83     13.31   12.48  NiO
+  Cattierite     -153.49   -173.47  -19.98  CoS2
+  Chalcanthite    -15.31    -18.00   -2.69  CuSO4:5H2O
+  Chalcocite      -80.06   -114.08  -34.02  Cu2S
+  Chalcocyanite   -20.91    -17.97    2.94  CuSO4
+  Co(cr)          -25.39    -15.65    9.74  Co
+  Co(FeO2)2(alpha)  17.97     18.70    0.73  Co(FeO2)2
+  Co(OH)2(s)        0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         13.25     68.11   54.86  Co3O4
+  CoO(s)           -0.65     13.12   13.77  CoO
+  Corundum         -2.80     15.50   18.30  Al2O3
+  CoS(alpha)      -87.12    -94.56   -7.44  CoS
+  CoS(beta)       -83.49    -94.56  -11.07  CoS
+  CoSO4(s)        -16.21    -13.20    3.01  CoSO4
+  CoSO4:6H2O(s)   -11.04    -13.24   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -12.15    -13.20   -1.05  CoSO4:H2O
+  Covellite       -77.27    -99.33  -22.06  CuS
+  Cu(cr)           -9.03    -20.42  -11.39  Cu
+  Cu(OH)2(s)        0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -79.17   -110.39  -31.22  Cu1.75S
+  Cu1.934S(cr)    -79.78   -113.11  -33.33  Cu1.934S
+  Cu2O(cr)         -5.79     -6.41   -0.62  Cu2O
+  CuO(s)            0.72      8.35    7.63  CuO
+  Diaspore          0.88      7.75    6.87  AlO(OH)
+  Fe(alpha,cr)    -43.19    -27.30   15.89  Fe
+  Fe(OH)2(cr)     -11.33      1.45   12.78  Fe(OH)2
+  Fe(OH)3(s)       -0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.19      3.32   13.51  Fe0.932O
+  Fe3O4(s)         -5.56      7.04   12.60  Fe3O4
+  FeAl2O4(s)      -10.24     16.96   27.20  FeAl2O4
+  FeO(s)          -11.93      1.46   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)  -0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -103.26   -106.21   -2.95  FeS
+  Gibbsite          0.00      7.74    7.74  Al(OH)3
+  Goethite          2.62      2.79    0.17  FeOOH
+  GR-SO4          -47.14     11.16   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -382.52   -397.55  -15.03  Fe3S4
+  H2(g)           -28.77    -28.77    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  H2S(g)          -99.68   -107.68   -8.00  H2S
+  Hausmannite      13.30     74.62   61.32  Mn3O4
+  Heazlewoodite  -186.96   -204.19  -17.23  Ni3S2
+  Hematite(cr)      6.41      5.58   -0.83  Fe2O3
+  Hematite(s)       5.68      5.58   -0.10  Fe2O3
+  Langite         -10.44      7.05   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.93      2.79    1.86  FeOOH
+  Li(cr)          -54.62     -3.30   51.32  Li
+  Linnaeite      -319.82   -362.58  -42.76  Co3S4
+  Mackinawite    -103.02   -106.21   -3.19  FeS
+  Maghemite         2.79      5.58    2.79  Fe2O3
+  Magnetite        -3.30      7.04   10.34  Fe3O4
+  Manganite         4.39     29.66   25.27  MnOOH
+  Melanterite     -22.62    -24.90   -2.28  FeSO4:7H2O
+  Millerite       -84.24    -94.37  -10.13  NiS
+  Mirabilite       -1.08     -2.31   -1.23  Na2SO4:10H2O
+  Mn(cr)          -53.47    -13.48   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)       -8.35    -11.03   -2.68  Mn(SO4)
+  MnO(s)           -2.61     15.29   17.90  MnO
+  MnO2(s)           2.05     44.05   42.00  MnO2
+  Na(cr)          -48.23     -2.34   45.89  Na
+  Na2O(cr)        -43.39     24.07   67.46  Na2O
+  Ni(cr)          -23.48    -15.46    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -17.76    -13.01    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -10.80    -13.05   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -10.78    -13.05   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          3.18     68.68   65.50  Ni3O4
+  O2(g)           -25.57    -28.47   -2.90  O2
+  Polydymite     -322.74   -362.01  -39.27  Ni3S4
+  Pyrite         -168.30   -185.12  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite      -97.34   -102.66   -5.32  Fe0.87S
+  S(cr)           -76.77    -78.91   -2.14  S
+  Schwertmannite(cr) -12.73     -4.01    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -49.76    -58.70   -8.94  SO2
+  Thenardite       -1.88     -2.24   -0.36  Na2SO4
+  Trevorite         9.46     18.89    9.43  Fe2NiO4
+  Troilite       -102.22   -106.21   -3.99  FeS
+  Vaesite        -155.31   -173.28  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 4.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       9.5474694e-03
+	    Fe2(SO4)3       2.3380454e-03
+	    CuSO4           1.9213500e-02
+	    CoSO4:7H2O      6.6168623e-02
+	    NiSO4:6H2O      1.2986354e-01
+	    MnSO4:H2O       5.7981304e-02
+	    Li2SO4:H2O      3.3604251e-02
+	    Na+             1.3333333e+00
+	    OH-             1.3333333e+00
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 2, 1.33333333333, 0.333333333333
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.00955
+	CoSO4:7H2O           0.06617
+	CuSO4                0.01921
+	Fe2(SO4)3            0.00234
+	Li2SO4:H2O           0.03360
+	MnSO4:H2O            0.05798
+	Na+                  1.33333
+	NiSO4:6H2O           0.12986
+	OH-                  1.33333
+
+	                 Relative
+	Element             moles
+	Al                   0.01909
+	Co                   0.06617
+	Cu                   0.01921
+	Fe                   0.00468
+	H                    4.00123
+	Li                   0.06721
+	Mn                   0.05798
+	Na                   1.33333
+	Ni                   0.12986
+	O                    4.03723
+	S                    0.34249
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)        0.00    13.11     13.11    0.000e+00   6.614e-02   6.614e-02
+Cu(OH)2(s)       -0.00     8.34      8.34    0.000e+00   1.878e-02   1.878e-02
+Fe(OH)3(s)       -0.00     2.78      2.78    0.000e+00   4.664e-03   4.664e-03
+Gibbsite         -0.52     7.22      7.74    0.000e+00           0   0.000e+00
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   5.796e-02   5.796e-02
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   1.298e-01   1.298e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                1.865e-02   1.909e-02
+	Co                3.101e-05   3.176e-05
+	Cu                4.203e-04   4.304e-04
+	Fe                1.159e-05   1.187e-05
+	Li                6.563e-02   6.721e-02
+	Mn                1.825e-05   1.869e-05
+	Na                1.302e+00   1.333e+00
+	Ni                1.995e-05   2.043e-05
+	S                 3.345e-01   3.425e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  13.675      Charge balance
+                                       pe  =   1.599      Adjusted to redox equilibrium
+                        Activity of water  =   0.964
+                 Ionic strength (mol/kgw)  =   1.701e+00
+                       Mass of water (kg)  =   1.024e+00
+                 Total alkalinity (eq/kg)  =   7.557e-01
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -6.858e-10
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  51
+                         Gamma iterations  =   8
+                      Osmotic coefficient  =   0.85331
+                                  Total H  = 1.144591e+02
+                                  Total O  = 5.898647e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             6.792e-01   4.561e-01    -0.168    -0.341    -0.173     (0)  
+   H+              3.548e-14   2.113e-14   -13.450   -13.675    -0.225      0.00
+   H2O             5.551e+01   9.638e-01     1.744    -0.016     0.000     18.07
+Al            1.865e-02
+   Al(OH)4-        1.730e-02   1.030e-02    -1.762    -1.987    -0.225     (0)  
+   NaAl(OH)4       1.347e-03   1.347e-03    -2.871    -2.871     0.000     (0)  
+   Al(OH)3         6.368e-10   6.368e-10    -9.196    -9.196     0.000     (0)  
+   Al(OH)2+        1.622e-17   9.659e-18   -16.790   -17.015    -0.225     (0)  
+   Al(OH)+2        7.177e-25   9.034e-26   -24.144   -25.044    -0.900     (0)  
+   Al+3            1.870e-32   1.765e-34   -31.728   -33.753    -2.025     (0)  
+   Al(SO4)+        1.289e-32   7.675e-33   -31.890   -32.115    -0.225     (0)  
+Co            3.101e-05
+   Co(OH)3-        1.968e-05   1.172e-05    -4.706    -4.931    -0.225     (0)  
+   Co(OH)4-2       8.093e-06   1.019e-06    -5.092    -5.992    -0.900     (0)  
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)+         2.792e-10   1.663e-10    -9.554    -9.779    -0.225     (0)  
+   Co+2            4.920e-14   6.193e-15   -13.308   -14.208    -0.900     (0)  
+   CoSO4           3.632e-14   3.632e-14   -13.440   -13.440     0.000     (0)  
+   Co2(OH)+3       2.741e-23   2.587e-25   -22.562   -24.587    -2.025     (0)  
+   Co4(OH)4+4      3.342e-29   8.391e-33   -28.476   -32.076    -3.600     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.956  -112.181    -0.225     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -126.112  -126.112     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -212.723  -212.723     0.000     (0)  
+Cu(1)         3.949e-09
+   Cu(OH)2-        3.948e-09   2.351e-09    -8.404    -8.629    -0.225     (0)  
+   CuOH            1.707e-12   1.707e-12   -11.768   -11.768     0.000     (0)  
+   Cu+             3.008e-18   1.792e-18   -17.522   -17.747    -0.225     (0)  
+   CuHS            0.000e+00   0.000e+00  -108.389  -108.389     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -121.345  -121.570    -0.225     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -207.627  -207.852    -0.225     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -301.976  -302.876    -0.900     (0)  
+Cu(2)         4.203e-04
+   Cu(OH)4-2       3.811e-04   8.474e-05    -3.419    -4.072    -0.653     (0)  
+   Cu(OH)3-        3.927e-05   2.339e-05    -4.406    -4.631    -0.225     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         8.629e-14   5.140e-14   -13.064   -13.289    -0.225     (0)  
+   Cu+2            8.355e-19   1.052e-19   -18.078   -18.978    -0.900     (0)  
+   CuSO4           6.311e-19   6.311e-19   -18.200   -18.200     0.000     (0)  
+   Cu2(OH)2+2      5.152e-21   6.485e-22   -20.288   -21.188    -0.900     (0)  
+   Cu3(OH)4+2      4.591e-23   5.780e-24   -22.338   -23.238    -0.900     (0)  
+   Cu2(OH)+3       1.042e-29   9.837e-32   -28.982   -31.007    -2.025     (0)  
+Fe(2)         3.001e-18
+   Fe(OH)4-2       2.954e-18   3.719e-19   -17.530   -18.430    -0.900     (0)  
+   Fe(OH)3-        4.134e-20   2.462e-20   -19.384   -19.609    -0.225     (0)  
+   Fe(OH)2         5.399e-21   5.399e-21   -20.268   -20.268     0.000     (0)  
+   Fe(OH)+         7.731e-23   4.605e-23   -22.112   -22.337    -0.225     (0)  
+   Fe(SO4)         1.454e-26   1.454e-26   -25.838   -25.838     0.000     (0)  
+   Fe+2            1.426e-26   1.796e-27   -25.846   -26.746    -0.900     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -125.823  -126.048    -0.225     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -227.581  -227.581     0.000     (0)  
+Fe(3)         1.159e-05
+   Fe(OH)4-        1.159e-05   6.903e-06    -4.936    -5.161    -0.225     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        3.515e-16   2.094e-16   -15.454   -15.679    -0.225     (0)  
+   Fe(OH)+2        1.629e-26   2.051e-27   -25.788   -26.688    -0.900     (0)  
+   Fe(SO4)2-       1.529e-35   9.105e-36   -34.816   -35.041    -0.225     (0)  
+   Fe(SO4)+        5.573e-36   3.320e-36   -35.254   -35.479    -0.225     (0)  
+   Fe+3            6.729e-37   6.351e-39   -36.172   -38.197    -2.025     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -48.296   -51.896    -3.600     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -60.630   -66.255    -5.625     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -148.026  -148.251    -0.225     (0)  
+H(0)          4.716e-34
+   H2              2.358e-34   2.358e-34   -33.627   -33.627     0.000     (0)  
+Li            6.563e-02
+   Li+             6.563e-02   3.909e-02    -1.183    -1.408    -0.225     (0)  
+Mn(2)         1.825e-05
+   Mn(OH)4-2       1.578e-05   1.987e-06    -4.802    -5.702    -0.900     (0)  
+   Mn(OH)3-        2.312e-06   1.377e-06    -5.636    -5.861    -0.225     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn2(OH)3+       1.683e-08   1.002e-08    -7.774    -7.999    -0.225     (0)  
+   Mn(OH)+         1.803e-09   1.074e-09    -8.744    -8.969    -0.225     (0)  
+   Mn+2            7.277e-12   9.160e-13   -11.138   -12.038    -0.900     (0)  
+   Mn(SO4)         4.788e-12   4.788e-12   -11.320   -11.320     0.000     (0)  
+   Mn2(OH)+3       3.221e-19   3.040e-21   -18.492   -20.517    -2.025     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -124.092  -124.092     0.000     (0)  
+Mn(3)         1.190e-34
+   Mn+3            1.190e-34   1.124e-36   -33.924   -35.949    -2.025     (0)  
+Mn(5)         1.316e-09
+   MnO4-3          1.316e-09   1.243e-11    -8.881   -10.906    -2.025     (0)  
+Mn(6)         1.456e-14
+   MnO4-2          1.456e-14   1.832e-15   -13.837   -14.737    -0.900     (0)  
+Mn(7)         5.089e-23
+   MnO4-           5.089e-23   3.031e-23   -22.293   -22.518    -0.225     (0)  
+Na            1.302e+00
+   Na+             1.301e+00   7.521e-01     0.114    -0.124    -0.238     (0)  
+   NaAl(OH)4       1.347e-03   1.347e-03    -2.871    -2.871     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -113.242  -113.467    -0.225     (0)  
+Ni            1.995e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         2.118e-10   1.262e-10    -9.674    -9.899    -0.225     (0)  
+   Ni(SO4)2-2      1.481e-13   8.479e-15   -12.830   -14.072    -1.242     (0)  
+   Ni+2            7.620e-14   9.592e-15   -13.118   -14.018    -0.900     (0)  
+   Ni(SO4)         6.311e-14   6.311e-14   -13.200   -13.200     0.000     (0)  
+   Ni2(OH)+3       1.117e-23   1.054e-25   -22.952   -24.977    -2.025     (0)  
+   Ni4(OH)4+4      4.405e-26   1.106e-29   -25.356   -28.956    -3.600     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.936  -112.161    -0.225     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.912  -125.912     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -210.203  -210.203     0.000     (0)  
+O(0)          2.365e-25
+   O2              1.183e-25   1.183e-25   -24.927   -24.927     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00  -103.418  -103.643    -0.225     (0)  
+   S-2             0.000e+00   0.000e+00  -106.168  -107.068    -0.900     (0)  
+   CuHS            0.000e+00   0.000e+00  -108.389  -108.389     0.000     (0)  
+   H2S             0.000e+00   0.000e+00  -110.328  -110.328     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.936  -112.161    -0.225     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.956  -112.181    -0.225     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -125.823  -126.048    -0.225     (0)  
+   S2-2            0.000e+00   0.000e+00  -186.378  -187.278    -0.900     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -207.627  -207.852    -0.225     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -210.203  -210.203     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -212.723  -212.723     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -227.581  -227.581     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -269.118  -270.018    -0.900     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -301.976  -302.876    -0.900     (0)  
+   S4-2            0.000e+00   0.000e+00  -352.958  -353.858    -0.900     (0)  
+   S5-2            0.000e+00   0.000e+00  -437.018  -437.918    -0.900     (0)  
+S(2)          0.000e+00
+   S2O3-2          0.000e+00   0.000e+00  -113.053  -113.953    -0.900     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -113.242  -113.467    -0.225     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -121.345  -121.570    -0.225     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -124.092  -124.092     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -125.683  -125.908    -0.225     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.912  -125.912     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -126.112  -126.112     0.000     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -138.984  -138.984     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -148.026  -148.251    -0.225     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -110.392  -111.292    -0.900     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -122.242  -122.467    -0.225     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -135.842  -135.842     0.000     (0)  
+S(4)          2.093e-35
+   SO3-2           2.093e-35   2.074e-36   -34.679   -35.683    -1.004     (0)  
+   H(SO3)-         0.000e+00   0.000e+00   -41.963   -42.188    -0.225     (0)  
+   SO2             0.000e+00   0.000e+00   -53.987   -53.987     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -54.003   -54.003     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -84.951   -85.851    -0.900     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -154.529  -155.429    -0.900     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -224.629  -225.530    -0.900     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -324.120  -325.020    -0.900     (0)  
+S(6)          3.345e-01
+   SO4-2           3.345e-01   2.939e-02    -0.476    -1.532    -1.056     (0)  
+   Mn(SO4)         4.788e-12   4.788e-12   -11.320   -11.320     0.000     (0)  
+   Ni(SO4)2-2      1.481e-13   8.479e-15   -12.830   -14.072    -1.242     (0)  
+   H(SO4)-         1.026e-13   5.931e-14   -12.989   -13.227    -0.238     (0)  
+   Ni(SO4)         6.311e-14   6.311e-14   -13.200   -13.200     0.000     (0)  
+   CoSO4           3.632e-14   3.632e-14   -13.440   -13.440     0.000     (0)  
+   CuSO4           6.311e-19   6.311e-19   -18.200   -18.200     0.000     (0)  
+   Fe(SO4)         1.454e-26   1.454e-26   -25.838   -25.838     0.000     (0)  
+   Al(SO4)+        1.289e-32   7.675e-33   -31.890   -32.115    -0.225     (0)  
+   Fe(SO4)2-       1.529e-35   9.105e-36   -34.816   -35.041    -0.225     (0)  
+   Fe(SO4)+        5.573e-36   3.320e-36   -35.254   -35.479    -0.225     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -64.346   -65.246    -0.900     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -44.660   -44.885    -0.225     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -123.98    -38.55   85.43  Al
+  Alabandite     -102.91   -102.01    0.90  MnS
+  Antlerite       -12.74     -3.83    8.91  Cu3SO4(OH)4
+  Bieberite       -13.50    -15.85   -2.35  CoSO4:7H2O
+  Boehmite         -0.38      7.24    7.62  AlO(OH)
+  Brochantite     -11.03      4.51   15.54  Cu4SO4(OH)6
+  Bunsenite         0.84     13.32   12.48  NiO
+  Cattierite     -170.97   -190.95  -19.98  CoS2
+  Chalcanthite    -17.90    -20.59   -2.69  CuSO4:5H2O
+  Chalcocite      -91.44   -125.46  -34.02  Cu2S
+  Chalcocyanite   -23.45    -20.51    2.94  CuSO4
+  Co(cr)          -27.15    -17.41    9.74  Co
+  Co(FeO2)2(alpha)  18.00     18.73    0.73  Co(FeO2)2
+  Co(OH)2(s)        0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         15.05     69.91   54.86  Co3O4
+  CoO(s)           -0.64     13.13   13.77  CoO
+  Corundum         -3.80     14.50   18.30  Al2O3
+  CoS(alpha)      -96.74   -104.18   -7.44  CoS
+  CoS(beta)       -93.11   -104.18  -11.07  CoS
+  CoSO4(s)        -18.75    -15.74    3.01  CoSO4
+  CoSO4:6H2O(s)   -13.64    -15.84   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -14.71    -15.76   -1.05  CoSO4:H2O
+  Covellite       -86.89   -108.95  -22.06  CuS
+  Cu(cr)          -10.79    -22.18  -11.39  Cu
+  Cu(OH)2(s)       -0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -90.11   -121.33  -31.22  Cu1.75S
+  Cu1.934S(cr)    -91.04   -124.37  -33.33  Cu1.934S
+  Cu2O(cr)         -7.54     -8.16   -0.62  Cu2O
+  CuO(s)            0.73      8.36    7.63  CuO
+  Diaspore          0.37      7.24    6.87  AlO(OH)
+  Fe(alpha,cr)    -45.83    -29.94   15.89  Fe
+  Fe(OH)2(cr)     -12.21      0.57   12.78  Fe(OH)2
+  Fe(OH)3(s)       -0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.89      2.62   13.51  Fe0.932O
+  Fe3O4(s)         -6.40      6.20   12.60  Fe3O4
+  FeAl2O4(s)      -12.12     15.08   27.20  FeAl2O4
+  FeO(s)          -12.80      0.59   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)  -0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -113.76   -116.71   -2.95  FeS
+  Gibbsite         -0.52      7.22    7.74  Al(OH)3
+  Goethite          2.63      2.80    0.17  FeOOH
+  GR-SO4          -53.20      5.10   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -421.88   -436.91  -15.03  Fe3S4
+  H2(g)           -30.55    -30.55    0.00  H2
+  H2O(g)           -1.51    -43.01  -41.50  H2O
+  H2S(g)         -109.32   -117.32   -8.00  H2S
+  Hausmannite      15.10     76.42   61.32  Mn3O4
+  Heazlewoodite  -207.96   -225.19  -17.23  Ni3S2
+  Hematite(cr)      6.44      5.61   -0.83  Fe2O3
+  Hematite(s)       5.71      5.61   -0.10  Fe2O3
+  Langite         -13.00      4.49   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.94      2.80    1.86  FeOOH
+  Li(cr)          -54.33     -3.01   51.32  Li
+  Linnaeite      -356.54   -399.30  -42.76  Co3S4
+  Mackinawite    -113.52   -116.71   -3.19  FeS
+  Maghemite         2.82      5.61    2.79  Fe2O3
+  Magnetite        -4.14      6.20   10.34  Fe3O4
+  Manganite         5.28     30.55   25.27  MnOOH
+  Melanterite     -26.11    -28.39   -2.28  FeSO4:7H2O
+  Millerite       -93.86   -103.99  -10.13  NiS
+  Mirabilite       -0.71     -1.94   -1.23  Na2SO4:10H2O
+  Mn(cr)          -55.23    -15.24   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)      -10.89    -13.57   -2.68  Mn(SO4)
+  MnO(s)           -2.60     15.30   17.90  MnO
+  MnO2(s)           3.83     45.83   42.00  MnO2
+  Na(cr)          -47.61     -1.72   45.89  Na
+  Na2O(cr)        -40.37     27.09   67.46  Na2O
+  Ni(cr)          -25.24    -17.22    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -20.30    -15.55    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -13.40    -15.65   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -13.39    -15.66   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          4.98     70.48   65.50  Ni3O4
+  O2(g)           -22.03    -24.93   -2.90  O2
+  Polydymite     -359.46   -398.73  -39.27  Ni3S4
+  Pyrite         -186.66   -203.48  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite     -107.50   -112.82   -5.32  Fe0.87S
+  S(cr)           -84.63    -86.77   -2.14  S
+  Schwertmannite(cr) -15.20     -6.48    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -54.08    -63.02   -8.94  SO2
+  Thenardite       -1.42     -1.78   -0.36  Na2SO4
+  Trevorite         9.49     18.92    9.43  Fe2NiO4
+  Troilite       -112.72   -116.71   -3.99  FeS
+  Vaesite        -172.79   -190.76  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 5.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       1.9094939e-02
+	    Fe2(SO4)3       4.6760908e-03
+	    CuSO4           3.8426999e-02
+	    CoSO4:7H2O      1.3233725e-01
+	    NiSO4:6H2O      2.5972708e-01
+	    MnSO4:H2O       1.1596261e-01
+	    Li2SO4:H2O      6.7208503e-02
+	    Na+             2.0000000e+00
+	    OH-             2.0000000e+00
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 3, 2, 0.666666666667
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.01909
+	CoSO4:7H2O           0.13234
+	CuSO4                0.03843
+	Fe2(SO4)3            0.00468
+	Li2SO4:H2O           0.06721
+	MnSO4:H2O            0.11596
+	Na+                  2.00000
+	NiSO4:6H2O           0.25973
+	OH-                  2.00000
+
+	                 Relative
+	Element             moles
+	Al                   0.03819
+	Co                   0.13234
+	Cu                   0.03843
+	Fe                   0.00935
+	H                    7.33579
+	Li                   0.13442
+	Mn                   0.11596
+	Na                   2.00000
+	Ni                   0.25973
+	O                    7.40780
+	S                    0.68498
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)       -0.00    13.11     13.11    0.000e+00   1.323e-01   1.323e-01
+Cu(OH)2(s)        0.00     8.34      8.34    0.000e+00   3.800e-02   3.800e-02
+Fe(OH)3(s)       -0.00     2.78      2.78    0.000e+00   9.339e-03   9.339e-03
+Gibbsite         -0.26     7.48      7.74    0.000e+00           0   0.000e+00
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   1.159e-01   1.159e-01
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   2.597e-01   2.597e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                3.644e-02   3.819e-02
+	Co                3.458e-05   3.624e-05
+	Cu                4.089e-04   4.286e-04
+	Fe                1.248e-05   1.308e-05
+	Li                1.283e-01   1.344e-01
+	Mn                2.243e-05   2.350e-05
+	Na                1.908e+00   2.000e+00
+	Ni                1.995e-05   2.091e-05
+	S                 6.536e-01   6.850e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  13.696      Charge balance
+                                       pe  =   1.537      Adjusted to redox equilibrium
+                        Activity of water  =   0.952
+                 Ionic strength (mol/kgw)  =   2.687e+00
+                       Mass of water (kg)  =   1.048e+00
+                 Total alkalinity (eq/kg)  =   8.397e-01
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -1.663e-09
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  53
+                         Gamma iterations  =   9
+                      Osmotic coefficient  =   0.79478
+                                  Total H  = 1.172332e+02
+                                  Total O  = 6.179657e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             6.921e-01   4.728e-01    -0.160    -0.325    -0.166     (0)  
+   H+              3.514e-14   2.014e-14   -13.454   -13.696    -0.242      0.00
+   H2O             5.551e+01   9.523e-01     1.744    -0.021     0.000     18.07
+Al            3.644e-02
+   Al(OH)4-        3.322e-02   1.904e-02    -1.479    -1.720    -0.242     (0)  
+   NaAl(OH)4       3.215e-03   3.215e-03    -2.493    -2.493     0.000     (0)  
+   Al(OH)3         1.135e-09   1.135e-09    -8.945    -8.945     0.000     (0)  
+   Al(OH)2+        2.898e-17   1.661e-17   -16.538   -16.780    -0.242     (0)  
+   Al(OH)+2        1.389e-24   1.499e-25   -23.857   -24.824    -0.967     (0)  
+   Al+3            4.232e-32   2.826e-34   -31.373   -33.549    -2.175     (0)  
+   Al(SO4)+        3.038e-32   1.742e-32   -31.517   -31.759    -0.242     (0)  
+Co            3.458e-05
+   Co(OH)3-        2.120e-05   1.215e-05    -4.674    -4.915    -0.242     (0)  
+   Co(OH)4-2       1.014e-05   1.095e-06    -4.994    -5.961    -0.967     (0)  
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)+         2.799e-10   1.605e-10    -9.553    -9.795    -0.242     (0)  
+   Co+2            5.340e-14   5.764e-15   -13.272   -14.239    -0.967     (0)  
+   CoSO4           4.792e-14   4.792e-14   -13.319   -13.319     0.000     (0)  
+   Co2(OH)+3       3.479e-23   2.323e-25   -22.459   -24.634    -2.175     (0)  
+   Co4(OH)4+4      5.356e-29   7.268e-33   -28.271   -32.139    -3.867     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.489  -111.730    -0.242     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.525  -125.525     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -211.792  -211.792     0.000     (0)  
+Cu(1)         4.735e-09
+   Cu(OH)2-        4.733e-09   2.713e-09    -8.325    -8.567    -0.242     (0)  
+   CuOH            1.900e-12   1.900e-12   -11.721   -11.721     0.000     (0)  
+   Cu+             3.356e-18   1.923e-18   -17.474   -17.716    -0.242     (0)  
+   CuHS            0.000e+00   0.000e+00  -107.877  -107.877     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -120.680  -120.922    -0.242     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -206.617  -206.858    -0.242     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -300.383  -301.349    -0.967     (0)  
+Cu(2)         4.089e-04
+   Cu(OH)4-2       3.666e-04   9.106e-05    -3.436    -4.041    -0.605     (0)  
+   Cu(OH)3-        4.230e-05   2.425e-05    -4.374    -4.615    -0.242     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         8.651e-14   4.958e-14   -13.063   -13.305    -0.242     (0)  
+   Cu+2            9.069e-19   9.788e-20   -18.042   -19.009    -0.967     (0)  
+   CuSO4           8.327e-19   8.327e-19   -18.079   -18.079     0.000     (0)  
+   Cu2(OH)2+2      5.592e-21   6.035e-22   -20.252   -21.219    -0.967     (0)  
+   Cu3(OH)4+2      4.984e-23   5.379e-24   -22.302   -23.269    -0.967     (0)  
+   Cu2(OH)+3       1.323e-29   8.832e-32   -28.879   -31.054    -2.175     (0)  
+Fe(2)         4.176e-18
+   Fe(OH)4-2       4.120e-18   4.447e-19   -17.385   -18.352    -0.967     (0)  
+   Fe(OH)3-        4.956e-20   2.840e-20   -19.305   -19.547    -0.242     (0)  
+   Fe(OH)2         6.008e-21   6.008e-21   -20.221   -20.221     0.000     (0)  
+   Fe(OH)+         8.626e-23   4.944e-23   -22.064   -22.306    -0.242     (0)  
+   Fe(SO4)         2.134e-26   2.134e-26   -25.671   -25.671     0.000     (0)  
+   Fe+2            1.723e-26   1.860e-27   -25.764   -26.731    -0.967     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -125.310  -125.552    -0.242     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -226.603  -226.603     0.000     (0)  
+Fe(3)         1.248e-05
+   Fe(OH)4-        1.248e-05   7.156e-06    -4.904    -5.145    -0.242     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        3.524e-16   2.020e-16   -15.453   -15.695    -0.242     (0)  
+   Fe(OH)+2        1.768e-26   1.909e-27   -25.752   -26.719    -0.967     (0)  
+   Fe(SO4)2-       2.867e-35   1.643e-35   -34.543   -34.784    -0.242     (0)  
+   Fe(SO4)+        7.372e-36   4.225e-36   -35.132   -35.374    -0.242     (0)  
+   Fe+3            8.540e-37   5.702e-39   -36.069   -38.244    -2.175     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -48.091   -51.959    -3.867     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -60.290   -66.333    -6.043     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.438  -147.680    -0.242     (0)  
+H(0)          5.702e-34
+   H2              2.851e-34   2.851e-34   -33.545   -33.545     0.000     (0)  
+Li            1.283e-01
+   Li+             1.283e-01   7.351e-02    -0.892    -1.134    -0.242     (0)  
+Mn(2)         2.242e-05
+   Mn(OH)4-2       1.978e-05   2.135e-06    -4.704    -5.671    -0.967     (0)  
+   Mn(OH)3-        2.491e-06   1.428e-06    -5.604    -5.845    -0.242     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn2(OH)3+       1.687e-08   9.668e-09    -7.773    -8.015    -0.242     (0)  
+   Mn(OH)+         1.807e-09   1.036e-09    -8.743    -8.985    -0.242     (0)  
+   Mn+2            7.899e-12   8.525e-13   -11.102   -12.069    -0.967     (0)  
+   Mn(SO4)         6.317e-12   6.317e-12   -11.199   -11.199     0.000     (0)  
+   Mn2(OH)+3       4.088e-19   2.729e-21   -18.389   -20.564    -2.175     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.505  -123.505     0.000     (0)  
+Mn(3)         1.358e-34
+   Mn+3            1.358e-34   9.064e-37   -33.867   -36.043    -2.175     (0)  
+Mn(5)         1.578e-09
+   MnO4-3          1.578e-09   1.054e-11    -8.802   -10.977    -2.175     (0)  
+Mn(6)         1.248e-14
+   MnO4-2          1.248e-14   1.347e-15   -13.904   -14.871    -0.967     (0)  
+Mn(7)         3.370e-23
+   MnO4-           3.370e-23   1.932e-23   -22.472   -22.714    -0.242     (0)  
+Na            1.908e+00
+   Na+             1.905e+00   9.717e-01     0.280    -0.012    -0.292     (0)  
+   NaAl(OH)4       3.215e-03   3.215e-03    -2.493    -2.493     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -112.497  -112.738    -0.242     (0)  
+Ni            1.995e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         2.124e-10   1.217e-10    -9.673    -9.915    -0.242     (0)  
+   Ni(SO4)2-2      4.658e-13   1.586e-14   -12.332   -13.800    -1.468     (0)  
+   Ni(SO4)         8.327e-14   8.327e-14   -13.079   -13.079     0.000     (0)  
+   Ni+2            8.271e-14   8.927e-15   -13.082   -14.049    -0.967     (0)  
+   Ni2(OH)+3       1.417e-23   9.463e-26   -22.849   -25.024    -2.175     (0)  
+   Ni4(OH)4+4      7.061e-26   9.580e-30   -25.151   -29.019    -3.867     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.469  -111.710    -0.242     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.325  -125.325     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -209.272  -209.272     0.000     (0)  
+O(0)          1.580e-25
+   O2              7.898e-26   7.898e-26   -25.102   -25.102     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00  -102.919  -103.161    -0.242     (0)  
+   S-2             0.000e+00   0.000e+00  -105.598  -106.565    -0.967     (0)  
+   CuHS            0.000e+00   0.000e+00  -107.877  -107.877     0.000     (0)  
+   H2S             0.000e+00   0.000e+00  -109.867  -109.867     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.469  -111.710    -0.242     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.489  -111.730    -0.242     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -125.310  -125.552    -0.242     (0)  
+   S2-2            0.000e+00   0.000e+00  -185.430  -186.397    -0.967     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -206.617  -206.858    -0.242     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -209.272  -209.272     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -211.792  -211.792     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -226.603  -226.603     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -267.792  -268.759    -0.967     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -300.383  -301.349    -0.967     (0)  
+   S4-2            0.000e+00   0.000e+00  -351.255  -352.221    -0.967     (0)  
+   S5-2            0.000e+00   0.000e+00  -434.937  -435.903    -0.967     (0)  
+S(2)          0.000e+00
+   S2O3-2          0.000e+00   0.000e+00  -112.369  -113.336    -0.967     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -112.497  -112.738    -0.242     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -120.680  -120.922    -0.242     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.505  -123.505     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -125.070  -125.312    -0.242     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.325  -125.325     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.525  -125.525     0.000     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -138.408  -138.408     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.438  -147.680    -0.242     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -109.795  -110.762    -0.967     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -121.716  -121.958    -0.242     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -135.354  -135.354     0.000     (0)  
+S(4)          4.735e-35
+   SO3-2           4.735e-35   3.598e-36   -34.325   -35.444    -1.119     (0)  
+   H(SO3)-         0.000e+00   0.000e+00   -41.728   -41.970    -0.242     (0)  
+   SO2             0.000e+00   0.000e+00   -53.784   -53.784     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -53.806   -53.806     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -84.442   -85.408    -0.967     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -153.730  -154.697    -0.967     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -223.452  -224.419    -0.967     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -322.564  -323.531    -0.967     (0)  
+S(6)          6.536e-01
+   SO4-2           6.536e-01   4.167e-02    -0.185    -1.380    -1.195     (0)  
+   Mn(SO4)         6.317e-12   6.317e-12   -11.199   -11.199     0.000     (0)  
+   Ni(SO4)2-2      4.658e-13   1.586e-14   -12.332   -13.800    -1.468     (0)  
+   H(SO4)-         1.461e-13   8.015e-14   -12.835   -13.096    -0.261     (0)  
+   Ni(SO4)         8.327e-14   8.327e-14   -13.079   -13.079     0.000     (0)  
+   CoSO4           4.792e-14   4.792e-14   -13.319   -13.319     0.000     (0)  
+   CuSO4           8.327e-19   8.327e-19   -18.079   -18.079     0.000     (0)  
+   Fe(SO4)         2.134e-26   2.134e-26   -25.671   -25.671     0.000     (0)  
+   Al(SO4)+        3.038e-32   1.742e-32   -31.517   -31.759    -0.242     (0)  
+   Fe(SO4)2-       2.867e-35   1.643e-35   -34.543   -34.784    -0.242     (0)  
+   Fe(SO4)+        7.372e-36   4.225e-36   -35.132   -35.374    -0.242     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -64.100   -65.067    -0.967     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -44.601   -44.842    -0.242     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -123.59    -38.16   85.43  Al
+  Alabandite     -102.43   -101.53    0.90  MnS
+  Antlerite       -12.62     -3.71    8.91  Cu3SO4(OH)4
+  Bieberite       -13.42    -15.77   -2.35  CoSO4:7H2O
+  Boehmite         -0.12      7.50    7.62  AlO(OH)
+  Brochantite     -10.91      4.63   15.54  Cu4SO4(OH)6
+  Bunsenite         0.84     13.32   12.48  NiO
+  Cattierite     -170.12   -190.10  -19.98  CoS2
+  Chalcanthite    -17.81    -20.50   -2.69  CuSO4:5H2O
+  Chalcocite      -90.88   -124.90  -34.02  Cu2S
+  Chalcocyanite   -23.33    -20.39    2.94  CuSO4
+  Co(cr)          -27.05    -17.31    9.74  Co
+  Co(FeO2)2(alpha)  18.02     18.75    0.73  Co(FeO2)2
+  Co(OH)2(s)       -0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         14.98     69.84   54.86  Co3O4
+  CoO(s)           -0.64     13.13   13.77  CoO
+  Corundum         -3.29     15.01   18.30  Al2O3
+  CoS(alpha)      -96.26   -103.70   -7.44  CoS
+  CoS(beta)       -92.63   -103.70  -11.07  CoS
+  CoSO4(s)        -18.63    -15.62    3.01  CoSO4
+  CoSO4:6H2O(s)   -13.55    -15.75   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -14.59    -15.64   -1.05  CoSO4:H2O
+  Covellite       -86.41   -108.47  -22.06  CuS
+  Cu(cr)          -10.69    -22.08  -11.39  Cu
+  Cu(OH)2(s)        0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -89.57   -120.79  -31.22  Cu1.75S
+  Cu1.934S(cr)    -90.48   -123.81  -33.33  Cu1.934S
+  Cu2O(cr)         -7.44     -8.06   -0.62  Cu2O
+  CuO(s)            0.73      8.36    7.63  CuO
+  Diaspore          0.63      7.50    6.87  AlO(OH)
+  Fe(alpha,cr)    -45.69    -29.80   15.89  Fe
+  Fe(OH)2(cr)     -12.16      0.62   12.78  Fe(OH)2
+  Fe(OH)3(s)       -0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.84      2.67   13.51  Fe0.932O
+  Fe3O4(s)         -6.34      6.26   12.60  Fe3O4
+  FeAl2O4(s)      -11.55     15.65   27.20  FeAl2O4
+  FeO(s)          -12.75      0.64   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)  -0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -113.25   -116.20   -2.95  FeS
+  Gibbsite         -0.26      7.48    7.74  Al(OH)3
+  Goethite          2.63      2.80    0.17  FeOOH
+  GR-SO4          -52.89      5.41   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -419.95   -434.98  -15.03  Fe3S4
+  H2(g)           -30.47    -30.47    0.00  H2
+  H2O(g)           -1.52    -43.02  -41.50  H2O
+  H2S(g)         -108.86   -116.86   -8.00  H2S
+  Hausmannite      15.03     76.35   61.32  Mn3O4
+  Heazlewoodite  -206.92   -224.15  -17.23  Ni3S2
+  Hematite(cr)      6.45      5.62   -0.83  Fe2O3
+  Hematite(s)       5.72      5.62   -0.10  Fe2O3
+  Langite         -12.88      4.61   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.94      2.80    1.86  FeOOH
+  Li(cr)          -53.99     -2.67   51.32  Li
+  Linnaeite      -354.75   -397.51  -42.76  Co3S4
+  Mackinawite    -113.01   -116.20   -3.19  FeS
+  Maghemite         2.83      5.62    2.79  Fe2O3
+  Magnetite        -4.08      6.26   10.34  Fe3O4
+  Manganite         5.24     30.51   25.27  MnOOH
+  Melanterite     -25.98    -28.26   -2.28  FeSO4:7H2O
+  Millerite       -93.38   -103.51  -10.13  NiS
+  Mirabilite       -0.39     -1.62   -1.23  Na2SO4:10H2O
+  Mn(cr)          -55.13    -15.14   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)      -10.77    -13.45   -2.68  Mn(SO4)
+  MnO(s)           -2.60     15.30   17.90  MnO
+  MnO2(s)           3.75     45.75   42.00  MnO2
+  Na(cr)          -47.44     -1.55   45.89  Na
+  Na2O(cr)        -40.11     27.35   67.46  Na2O
+  Ni(cr)          -25.14    -17.12    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -20.18    -15.43    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -13.31    -15.56   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -13.31    -15.58   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          4.91     70.41   65.50  Ni3O4
+  O2(g)           -22.20    -25.10   -2.90  O2
+  Polydymite     -357.67   -396.94  -39.27  Ni3S4
+  Pyrite         -185.77   -202.59  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite     -107.00   -112.32   -5.32  Fe0.87S
+  S(cr)           -84.25    -86.39   -2.14  S
+  Schwertmannite(cr) -15.04     -6.32    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -53.87    -62.81   -8.94  SO2
+  Thenardite       -1.05     -1.41   -0.36  Na2SO4
+  Trevorite         9.51     18.94    9.43  Fe2NiO4
+  Troilite       -112.21   -116.20   -3.99  FeS
+  Vaesite        -171.94   -189.91  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 6.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       1.9094939e-02
+	    Fe2(SO4)3       4.6760908e-03
+	    CuSO4           3.8426999e-02
+	    CoSO4:7H2O      1.3233725e-01
+	    NiSO4:6H2O      2.5972708e-01
+	    MnSO4:H2O       1.1596261e-01
+	    Li2SO4:H2O      6.7208503e-02
+	    Na+             2.6666667e+00
+	    OH-             2.6666667e+00
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 4, 2.66666666667, 0.666666666667
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.01909
+	CoSO4:7H2O           0.13234
+	CuSO4                0.03843
+	Fe2(SO4)3            0.00468
+	Li2SO4:H2O           0.06721
+	MnSO4:H2O            0.11596
+	Na+                  2.66667
+	NiSO4:6H2O           0.25973
+	OH-                  2.66667
+
+	                 Relative
+	Element             moles
+	Al                   0.03819
+	Co                   0.13234
+	Cu                   0.03843
+	Fe                   0.00935
+	H                    8.00246
+	Li                   0.13442
+	Mn                   0.11596
+	Na                   2.66667
+	Ni                   0.25973
+	O                    8.07446
+	S                    0.68498
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)        0.00    13.11     13.11    0.000e+00   1.322e-01   1.322e-01
+Cu(OH)2(s)        0.00     8.34      8.34    0.000e+00   3.709e-02   3.709e-02
+Fe(OH)3(s)        0.00     2.78      2.78    0.000e+00   9.326e-03   9.326e-03
+Gibbsite         -0.59     7.15      7.74    0.000e+00           0   0.000e+00
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   1.159e-01   1.159e-01
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   2.597e-01   2.597e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                3.644e-02   3.819e-02
+	Co                8.960e-05   9.391e-05
+	Cu                1.271e-03   1.332e-03
+	Fe                2.537e-05   2.658e-05
+	Li                1.283e-01   1.344e-01
+	Mn                8.962e-05   9.393e-05
+	Na                2.544e+00   2.667e+00
+	Ni                1.995e-05   2.091e-05
+	S                 6.536e-01   6.850e-01
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  14.006      Charge balance
+                                       pe  =   1.061      Adjusted to redox equilibrium
+                        Activity of water  =   0.931
+                 Ionic strength (mol/kgw)  =   3.323e+00
+                       Mass of water (kg)  =   1.048e+00
+                 Total alkalinity (eq/kg)  =   1.478e+00
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -1.588e-08
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  54
+                         Gamma iterations  =   9
+                      Osmotic coefficient  =   0.84513
+                                  Total H  = 1.179020e+02
+                                  Total O  = 6.246534e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.326e+00   9.447e-01     0.123    -0.025    -0.147     (0)  
+   H+              1.749e-14   9.857e-15   -13.757   -14.006    -0.249      0.00
+   H2O             5.551e+01   9.311e-01     1.744    -0.031     0.000     18.07
+Al            3.644e-02
+   Al(OH)4-        3.218e-02   1.814e-02    -1.492    -1.741    -0.249     (0)  
+   NaAl(OH)4       4.259e-03   4.259e-03    -2.371    -2.371     0.000     (0)  
+   Al(OH)3         5.412e-10   5.412e-10    -9.267    -9.267     0.000     (0)  
+   Al(OH)2+        7.031e-18   3.963e-18   -17.153   -17.402    -0.249     (0)  
+   Al(OH)+2        1.773e-25   1.790e-26   -24.751   -25.747    -0.996     (0)  
+   Al+3            2.939e-33   1.689e-35   -32.532   -34.772    -2.241     (0)  
+   Al(SO4)+        1.449e-33   8.168e-34   -32.839   -33.088    -0.249     (0)  
+Co            8.960e-05
+   Co(OH)4-2       4.329e-05   4.371e-06    -4.364    -5.359    -0.996     (0)  
+   Co(OH)3-        4.308e-05   2.428e-05    -4.366    -4.615    -0.249     (0)  
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)+         1.425e-10   8.030e-11    -9.846   -10.095    -0.249     (0)  
+   Co+2            1.430e-14   1.444e-15   -13.845   -14.841    -0.996     (0)  
+   CoSO4           9.420e-15   9.420e-15   -14.026   -14.026     0.000     (0)  
+   Co2(OH)+3       5.069e-24   2.912e-26   -23.295   -25.536    -2.241     (0)  
+   Co4(OH)4+4      4.389e-30   4.560e-34   -29.358   -33.341    -3.983     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.141  -111.390    -0.249     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.590  -125.590     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -210.509  -210.509     0.000     (0)  
+Cu(1)         1.438e-08
+   Cu(OH)2-        1.437e-08   8.102e-09    -7.842    -8.091    -0.249     (0)  
+   CuOH            2.840e-12   2.840e-12   -11.547   -11.547     0.000     (0)  
+   Cu+             2.553e-18   1.439e-18   -17.593   -17.842    -0.249     (0)  
+   CuHS            0.000e+00   0.000e+00  -107.061  -107.061     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -120.263  -120.512    -0.249     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -204.851  -205.100    -0.249     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -297.469  -298.465    -0.996     (0)  
+Cu(2)         1.271e-03
+   Cu(OH)4-2       1.185e-03   3.635e-04    -2.926    -3.439    -0.513     (0)  
+   Cu(OH)3-        8.595e-05   4.845e-05    -4.066    -4.315    -0.249     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         4.402e-14   2.482e-14   -13.356   -13.605    -0.249     (0)  
+   Cu+2            2.428e-19   2.452e-20   -18.615   -19.611    -0.996     (0)  
+   CuSO4           1.637e-19   1.637e-19   -18.786   -18.786     0.000     (0)  
+   Cu2(OH)2+2      1.497e-21   1.512e-22   -20.825   -21.821    -0.996     (0)  
+   Cu3(OH)4+2      1.335e-23   1.347e-24   -22.875   -23.871    -0.996     (0)  
+   Cu2(OH)+3       1.927e-30   1.107e-32   -29.715   -31.956    -2.241     (0)  
+Fe(2)         2.645e-17
+   Fe(OH)4-2       2.629e-17   2.654e-18   -16.580   -17.576    -0.996     (0)  
+   Fe(OH)3-        1.505e-19   8.484e-20   -18.822   -19.071    -0.249     (0)  
+   Fe(OH)2         8.981e-21   8.981e-21   -20.047   -20.047     0.000     (0)  
+   Fe(OH)+         6.562e-23   3.699e-23   -22.183   -22.432    -0.249     (0)  
+   Fe+2            6.897e-27   6.963e-28   -26.161   -27.157    -0.996     (0)  
+   Fe(SO4)         6.272e-27   6.272e-27   -26.203   -26.203     0.000     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.787  -125.036    -0.249     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -225.145  -225.145     0.000     (0)  
+Fe(3)         2.537e-05
+   Fe(OH)4-        2.537e-05   1.430e-05    -4.596    -4.845    -0.249     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        1.793e-16   1.011e-16   -15.746   -15.995    -0.249     (0)  
+   Fe(OH)+2        4.735e-27   4.780e-28   -26.325   -27.321    -0.996     (0)  
+   Fe(SO4)2-       2.251e-36   1.269e-36   -35.648   -35.897    -0.249     (0)  
+   Fe(SO4)+        7.375e-37   4.157e-37   -36.132   -36.381    -0.249     (0)  
+   Fe+3            1.244e-37   7.148e-40   -36.905   -39.146    -2.241     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -49.178   -53.161    -3.983     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -61.612   -67.836    -6.224     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.797  -148.046    -0.249     (0)  
+H(0)          1.218e-33
+   H2              6.091e-34   6.091e-34   -33.215   -33.215     0.000     (0)  
+Li            1.283e-01
+   Li+             1.283e-01   7.229e-02    -0.892    -1.141    -0.249     (0)  
+Mn(2)         8.961e-05
+   Mn(OH)4-2       8.441e-05   8.522e-06    -4.074    -5.069    -0.996     (0)  
+   Mn(OH)3-        5.061e-06   2.853e-06    -5.296    -5.545    -0.249     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn2(OH)3+       8.584e-09   4.839e-09    -8.066    -8.315    -0.249     (0)  
+   Mn(OH)+         9.198e-10   5.185e-10    -9.036    -9.285    -0.249     (0)  
+   Mn+2            2.115e-12   2.135e-13   -11.675   -12.671    -0.996     (0)  
+   Mn(SO4)         1.242e-12   1.242e-12   -11.906   -11.906     0.000     (0)  
+   Mn2(OH)+3       5.955e-20   3.421e-22   -19.225   -21.466    -2.241     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.570  -123.570     0.000     (0)  
+Mn(3)         1.323e-35
+   Mn+3            1.323e-35   7.601e-38   -34.878   -37.119    -2.241     (0)  
+Mn(5)         4.792e-09
+   MnO4-3          4.792e-09   2.753e-11    -8.319   -10.560    -2.241     (0)  
+Mn(6)         1.167e-14
+   MnO4-2          1.167e-14   1.178e-15   -13.933   -14.929    -0.996     (0)  
+Mn(7)         1.004e-23
+   MnO4-           1.004e-23   5.657e-24   -22.998   -23.247    -0.249     (0)  
+Na            2.544e+00
+   Na+             2.540e+00   1.351e+00     0.405     0.131    -0.274     (0)  
+   NaAl(OH)4       4.259e-03   4.259e-03    -2.371    -2.371     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.810  -112.059    -0.249     (0)  
+Ni            1.995e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         1.081e-10   6.092e-11    -9.966   -10.215    -0.249     (0)  
+   Ni(SO4)2-2      1.129e-13   2.447e-15   -12.947   -14.611    -1.664     (0)  
+   Ni+2            2.215e-14   2.236e-15   -13.655   -14.651    -0.996     (0)  
+   Ni(SO4)         1.637e-14   1.637e-14   -13.786   -13.786     0.000     (0)  
+   Ni2(OH)+3       2.065e-24   1.186e-26   -23.685   -25.926    -2.241     (0)  
+   Ni4(OH)4+4      5.786e-27   6.011e-31   -26.238   -30.221    -3.983     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.121  -111.370    -0.249     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.390  -125.390     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -207.989  -207.989     0.000     (0)  
+O(0)          3.309e-26
+   O2              1.655e-26   1.655e-26   -25.781   -25.781     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00  -101.970  -102.219    -0.249     (0)  
+   S-2             0.000e+00   0.000e+00  -104.317  -105.313    -0.996     (0)  
+   CuHS            0.000e+00   0.000e+00  -107.061  -107.061     0.000     (0)  
+   H2S             0.000e+00   0.000e+00  -109.235  -109.235     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -111.121  -111.370    -0.249     (0)  
+   CoHS+           0.000e+00   0.000e+00  -111.141  -111.390    -0.249     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.787  -125.036    -0.249     (0)  
+   S2-2            0.000e+00   0.000e+00  -183.847  -184.843    -0.996     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -204.851  -205.100    -0.249     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -207.989  -207.989     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -210.509  -210.509     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -225.145  -225.145     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -265.907  -266.903    -0.996     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -297.469  -298.465    -0.996     (0)  
+   S4-2            0.000e+00   0.000e+00  -349.067  -350.063    -0.996     (0)  
+   S5-2            0.000e+00   0.000e+00  -432.447  -433.443    -0.996     (0)  
+S(2)          0.000e+00
+   S2O3-2          0.000e+00   0.000e+00  -111.804  -112.800    -0.996     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.810  -112.059    -0.249     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -120.263  -120.512    -0.249     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.570  -123.570     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -124.837  -125.086    -0.249     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.390  -125.390     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.590  -125.590     0.000     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -138.492  -138.492     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.797  -148.046    -0.249     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -109.570  -110.565    -0.996     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -121.823  -122.072    -0.249     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -135.778  -135.778     0.000     (0)  
+S(4)          9.757e-35
+   SO3-2           9.757e-35   6.169e-36   -34.011   -35.210    -1.199     (0)  
+   H(SO3)-         0.000e+00   0.000e+00   -41.797   -42.046    -0.249     (0)  
+   SO2             0.000e+00   0.000e+00   -54.161   -54.161     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -54.192   -54.192     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -84.555   -85.551    -0.996     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -153.881  -154.877    -0.996     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -223.301  -224.297    -0.996     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -322.111  -323.107    -0.996     (0)  
+S(6)          6.536e-01
+   SO4-2           6.536e-01   3.270e-02    -0.185    -1.485    -1.301     (0)  
+   Mn(SO4)         1.242e-12   1.242e-12   -11.906   -11.906     0.000     (0)  
+   Ni(SO4)2-2      1.129e-13   2.447e-15   -12.947   -14.611    -1.664     (0)  
+   H(SO4)-         5.790e-14   3.079e-14   -13.237   -13.512    -0.274     (0)  
+   Ni(SO4)         1.637e-14   1.637e-14   -13.786   -13.786     0.000     (0)  
+   CoSO4           9.420e-15   9.420e-15   -14.026   -14.026     0.000     (0)  
+   CuSO4           1.637e-19   1.637e-19   -18.786   -18.786     0.000     (0)  
+   Fe(SO4)         6.272e-27   6.272e-27   -26.203   -26.203     0.000     (0)  
+   Al(SO4)+        1.449e-33   8.168e-34   -32.839   -33.088    -0.249     (0)  
+   Fe(SO4)2-       2.251e-36   1.269e-36   -35.648   -35.897    -0.249     (0)  
+   Fe(SO4)+        7.375e-37   4.157e-37   -36.132   -36.381    -0.249     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -65.232   -66.228    -0.996     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -45.348   -45.597    -0.249     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -123.39    -37.96   85.43  Al
+  Alabandite     -101.78   -100.88    0.90  MnS
+  Antlerite       -13.33     -4.42    8.91  Cu3SO4(OH)4
+  Bieberite       -14.19    -16.54   -2.35  CoSO4:7H2O
+  Boehmite         -0.44      7.18    7.62  AlO(OH)
+  Brochantite     -11.62      3.92   15.54  Cu4SO4(OH)6
+  Bunsenite         0.85     13.33   12.48  NiO
+  Cattierite     -169.16   -189.14  -19.98  CoS2
+  Chalcanthite    -18.56    -21.25   -2.69  CuSO4:5H2O
+  Chalcocite      -89.88   -123.90  -34.02  Cu2S
+  Chalcocyanite   -24.04    -21.10    2.94  CuSO4
+  Co(cr)          -26.70    -16.96    9.74  Co
+  Co(FeO2)2(alpha)  18.06     18.79    0.73  Co(FeO2)2
+  Co(OH)2(s)        0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         14.67     69.53   54.86  Co3O4
+  CoO(s)           -0.63     13.14   13.77  CoO
+  Corundum         -3.90     14.40   18.30  Al2O3
+  CoS(alpha)      -95.61   -103.05   -7.44  CoS
+  CoS(beta)       -91.98   -103.05  -11.07  CoS
+  CoSO4(s)        -19.34    -16.33    3.01  CoSO4
+  CoSO4:6H2O(s)   -14.31    -16.51   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -15.31    -16.36   -1.05  CoSO4:H2O
+  Covellite       -85.76   -107.82  -22.06  CuS
+  Cu(cr)          -10.34    -21.73  -11.39  Cu
+  Cu(OH)2(s)        0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -88.66   -119.88  -31.22  Cu1.75S
+  Cu1.934S(cr)    -89.51   -122.84  -33.33  Cu1.934S
+  Cu2O(cr)         -7.08     -7.70   -0.62  Cu2O
+  CuO(s)            0.74      8.37    7.63  CuO
+  Diaspore          0.31      7.18    6.87  AlO(OH)
+  Fe(alpha,cr)    -45.17    -29.28   15.89  Fe
+  Fe(OH)2(cr)     -11.99      0.79   12.78  Fe(OH)2
+  Fe(OH)3(s)        0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.69      2.82   13.51  Fe0.932O
+  Fe3O4(s)         -6.12      6.48   12.60  Fe3O4
+  FeAl2O4(s)      -11.98     15.22   27.20  FeAl2O4
+  FeO(s)          -12.57      0.82   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)   0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -112.42   -115.37   -2.95  FeS
+  Gibbsite         -0.59      7.15    7.74  Al(OH)3
+  Goethite          2.64      2.81    0.17  FeOOH
+  GR-SO4          -52.90      5.40   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -417.17   -432.20  -15.03  Fe3S4
+  H2(g)           -30.14    -30.14    0.00  H2
+  H2O(g)           -1.53    -43.03  -41.50  H2O
+  H2S(g)         -108.23   -116.23   -8.00  H2S
+  Hausmannite      14.72     76.04   61.32  Mn3O4
+  Heazlewoodite  -205.27   -222.50  -17.23  Ni3S2
+  Hematite(cr)      6.48      5.65   -0.83  Fe2O3
+  Hematite(s)       5.75      5.65   -0.10  Fe2O3
+  Langite         -13.60      3.89   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.95      2.81    1.86  FeOOH
+  Li(cr)          -53.52     -2.20   51.32  Li
+  Linnaeite      -352.49   -395.25  -42.76  Co3S4
+  Mackinawite    -112.18   -115.37   -3.19  FeS
+  Maghemite         2.86      5.65    2.79  Fe2O3
+  Magnetite        -3.86      6.48   10.34  Fe3O4
+  Manganite         5.08     30.35   25.27  MnOOH
+  Melanterite     -26.58    -28.86   -2.28  FeSO4:7H2O
+  Millerite       -92.73   -102.86  -10.13  NiS
+  Mirabilite       -0.30     -1.53   -1.23  Na2SO4:10H2O
+  Mn(cr)          -54.78    -14.79   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)      -11.48    -14.16   -2.68  Mn(SO4)
+  MnO(s)           -2.59     15.31   17.90  MnO
+  MnO2(s)           3.42     45.42   42.00  MnO2
+  Na(cr)          -46.82     -0.93   45.89  Na
+  Na2O(cr)        -39.22     28.24   67.46  Na2O
+  Ni(cr)          -24.79    -16.77    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -20.89    -16.14    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -14.07    -16.32   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -14.08    -16.35   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          4.60     70.10   65.50  Ni3O4
+  O2(g)           -22.88    -25.78   -2.90  O2
+  Polydymite     -355.41   -394.68  -39.27  Ni3S4
+  Pyrite         -184.64   -201.46  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite     -106.24   -111.56   -5.32  Fe0.87S
+  S(cr)           -83.95    -86.09   -2.14  S
+  Schwertmannite(cr) -15.67     -6.95    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -54.25    -63.19   -8.94  SO2
+  Thenardite       -0.86     -1.22   -0.36  Na2SO4
+  Trevorite         9.55     18.98    9.43  Fe2NiO4
+  Troilite       -111.38   -115.37   -3.99  FeS
+  Vaesite        -170.98   -188.95  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 7.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       2.8642408e-02
+	    Fe2(SO4)3       7.0141362e-03
+	    CuSO4           5.7640499e-02
+	    CoSO4:7H2O      1.9850587e-01
+	    NiSO4:6H2O      3.8959063e-01
+	    MnSO4:H2O       1.7394391e-01
+	    Li2SO4:H2O      1.0081275e-01
+	    Na+             3.3333333e+00
+	    OH-             3.3333333e+00
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 5, 3.33333333333, 1
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.02864
+	CoSO4:7H2O           0.19851
+	CuSO4                0.05764
+	Fe2(SO4)3            0.00701
+	Li2SO4:H2O           0.10081
+	MnSO4:H2O            0.17394
+	Na+                  3.33333
+	NiSO4:6H2O           0.38959
+	OH-                  3.33333
+
+	                 Relative
+	Element             moles
+	Al                   0.05728
+	Co                   0.19851
+	Cu                   0.05764
+	Fe                   0.01403
+	H                   11.33702
+	Li                   0.20163
+	Mn                   0.17394
+	Na                   3.33333
+	Ni                   0.38959
+	O                   11.44503
+	S                    1.02746
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)        0.00    13.11     13.11    0.000e+00   1.984e-01   1.984e-01
+Cu(OH)2(s)        0.00     8.34      8.34    0.000e+00   5.640e-02   5.640e-02
+Fe(OH)3(s)       -0.00     2.78      2.78    0.000e+00   1.400e-02   1.400e-02
+Gibbsite         -0.45     7.29      7.74    0.000e+00           0   0.000e+00
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   1.738e-01   1.738e-01
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   3.896e-01   3.896e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                5.343e-02   5.728e-02
+	Co                9.822e-05   1.053e-04
+	Cu                1.154e-03   1.237e-03
+	Fe                2.668e-05   2.860e-05
+	Li                1.881e-01   2.016e-01
+	Mn                1.023e-04   1.097e-04
+	Na                3.109e+00   3.333e+00
+	Ni                1.995e-05   2.139e-05
+	S                 9.584e-01   1.027e+00
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  14.024      Charge balance
+                                       pe  =   1.021      Adjusted to redox equilibrium
+                        Activity of water  =   0.923
+                 Ionic strength (mol/kgw)  =   4.250e+00
+                       Mass of water (kg)  =   1.072e+00
+                 Total alkalinity (eq/kg)  =   1.544e+00
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -8.630e-10
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  55
+                         Gamma iterations  =   9
+                      Osmotic coefficient  =   0.79420
+                                  Total H  = 1.206760e+02
+                                  Total O  = 6.527530e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.324e+00   9.755e-01     0.122    -0.011    -0.133     (0)  
+   H+              1.709e-14   9.458e-15   -13.767   -14.024    -0.257      0.00
+   H2O             5.551e+01   9.226e-01     1.744    -0.035     0.000     18.07
+Al            5.343e-02
+   Al(OH)4-        4.674e-02   2.587e-02    -1.330    -1.587    -0.257     (0)  
+   NaAl(OH)4       6.694e-03   6.694e-03    -2.174    -2.174     0.000     (0)  
+   Al(OH)3         7.474e-10   7.474e-10    -9.126    -9.126     0.000     (0)  
+   Al(OH)2+        9.577e-18   5.300e-18   -17.019   -17.276    -0.257     (0)  
+   Al(OH)+2        2.471e-25   2.318e-26   -24.607   -25.635    -1.028     (0)  
+   Al+3            4.348e-33   2.118e-35   -32.362   -34.674    -2.312     (0)  
+   Al(SO4)+        2.159e-33   1.195e-33   -32.666   -32.923    -0.257     (0)  
+Co            9.822e-05
+   Co(OH)4-2       4.968e-05   4.660e-06    -4.304    -5.332    -1.028     (0)  
+   Co(OH)3-        4.531e-05   2.507e-05    -4.344    -4.601    -0.257     (0)  
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)+         1.405e-10   7.777e-11    -9.852   -10.109    -0.257     (0)  
+   Co+2            1.443e-14   1.354e-15   -13.841   -14.868    -1.028     (0)  
+   CoSO4           1.031e-14   1.031e-14   -13.987   -13.987     0.000     (0)  
+   Co2(OH)+3       5.429e-24   2.645e-26   -23.265   -25.578    -2.312     (0)  
+   Co4(OH)4+4      5.177e-30   4.010e-34   -29.286   -33.397    -4.111     (0)  
+   CoHS+           0.000e+00   0.000e+00  -110.912  -111.169    -0.257     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.317  -125.317     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -210.040  -210.040     0.000     (0)  
+Cu(1)         1.609e-08
+   Cu(OH)2-        1.608e-08   8.901e-09    -7.794    -8.051    -0.257     (0)  
+   CuOH            3.021e-12   3.021e-12   -11.520   -11.520     0.000     (0)  
+   Cu+             2.679e-18   1.482e-18   -17.572   -17.829    -0.257     (0)  
+   CuHS            0.000e+00   0.000e+00  -106.800  -106.800     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -119.941  -120.198    -0.257     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -204.334  -204.591    -0.257     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -296.649  -297.677    -1.028     (0)  
+Cu(2)         1.154e-03
+   Cu(OH)4-2       1.063e-03   3.876e-04    -2.973    -3.412    -0.438     (0)  
+   Cu(OH)3-        9.040e-05   5.003e-05    -4.044    -4.301    -0.257     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         4.342e-14   2.403e-14   -13.362   -13.619    -0.257     (0)  
+   Cu+2            2.451e-19   2.299e-20   -18.611   -19.638    -1.028     (0)  
+   CuSO4           1.791e-19   1.791e-19   -18.747   -18.747     0.000     (0)  
+   Cu2(OH)2+2      1.511e-21   1.418e-22   -20.821   -21.848    -1.028     (0)  
+   Cu3(OH)4+2      1.347e-23   1.263e-24   -22.871   -23.898    -1.028     (0)  
+   Cu2(OH)+3       2.064e-30   1.005e-32   -29.685   -31.998    -2.312     (0)  
+Fe(2)         3.227e-17
+   Fe(OH)4-2       3.209e-17   3.010e-18   -16.494   -17.521    -1.028     (0)  
+   Fe(OH)3-        1.684e-19   9.320e-20   -18.774   -19.031    -0.257     (0)  
+   Fe(OH)2         9.554e-21   9.554e-21   -20.020   -20.020     0.000     (0)  
+   Fe(OH)+         6.885e-23   3.811e-23   -22.162   -22.419    -0.257     (0)  
+   Fe+2            7.405e-27   6.947e-28   -26.131   -27.158    -1.028     (0)  
+   Fe(SO4)         7.299e-27   7.299e-27   -26.137   -26.137     0.000     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.532  -124.789    -0.257     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -224.650  -224.650     0.000     (0)  
+Fe(3)         2.668e-05
+   Fe(OH)4-        2.668e-05   1.476e-05    -4.574    -4.831    -0.257     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        1.769e-16   9.790e-17   -15.752   -16.009    -0.257     (0)  
+   Fe(OH)+2        4.779e-27   4.483e-28   -26.321   -27.348    -1.028     (0)  
+   Fe(SO4)2-       2.833e-36   1.568e-36   -35.548   -35.805    -0.257     (0)  
+   Fe(SO4)+        7.958e-37   4.404e-37   -36.099   -36.356    -0.257     (0)  
+   Fe+3            1.333e-37   6.492e-40   -36.875   -39.188    -2.312     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -49.106   -53.217    -4.111     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -61.483   -67.906    -6.423     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.529  -147.786    -0.257     (0)  
+H(0)          1.354e-33
+   H2              6.768e-34   6.768e-34   -33.170   -33.170     0.000     (0)  
+Li            1.881e-01
+   Li+             1.881e-01   1.041e-01    -0.726    -0.983    -0.257     (0)  
+Mn(2)         1.023e-04
+   Mn(OH)4-2       9.686e-05   9.087e-06    -4.014    -5.042    -1.028     (0)  
+   Mn(OH)3-        5.323e-06   2.946e-06    -5.274    -5.531    -0.257     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn2(OH)3+       8.467e-09   4.686e-09    -8.072    -8.329    -0.257     (0)  
+   Mn(OH)+         9.072e-10   5.021e-10    -9.042    -9.299    -0.257     (0)  
+   Mn+2            2.135e-12   2.002e-13   -11.671   -12.698    -1.028     (0)  
+   Mn(SO4)         1.359e-12   1.359e-12   -11.867   -11.867     0.000     (0)  
+   Mn2(OH)+3       6.379e-20   3.107e-22   -19.195   -21.508    -2.312     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.297  -123.297     0.000     (0)  
+Mn(3)         1.332e-35
+   Mn+3            1.332e-35   6.489e-38   -34.875   -37.188    -2.312     (0)  
+Mn(5)         5.362e-09
+   MnO4-3          5.362e-09   2.612e-11    -8.271   -10.583    -2.312     (0)  
+Mn(6)         1.084e-14
+   MnO4-2          1.084e-14   1.017e-15   -13.965   -14.993    -1.028     (0)  
+Mn(7)         8.035e-24
+   MnO4-           8.035e-24   4.447e-24   -23.095   -23.352    -0.257     (0)  
+Na            3.109e+00
+   Na+             3.102e+00   1.489e+00     0.492     0.173    -0.319     (0)  
+   NaAl(OH)4       6.694e-03   6.694e-03    -2.174    -2.174     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.459  -111.716    -0.257     (0)  
+Ni            1.995e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         1.066e-10   5.899e-11    -9.972   -10.229    -0.257     (0)  
+   Ni(SO4)2-2      2.179e-13   3.123e-15   -12.662   -14.505    -1.844     (0)  
+   Ni+2            2.235e-14   2.097e-15   -13.651   -14.678    -1.028     (0)  
+   Ni(SO4)         1.791e-14   1.791e-14   -13.747   -13.747     0.000     (0)  
+   Ni2(OH)+3       2.212e-24   1.077e-26   -23.655   -25.968    -2.312     (0)  
+   Ni4(OH)4+4      6.824e-27   5.286e-31   -26.166   -30.277    -4.111     (0)  
+   NiHS+           0.000e+00   0.000e+00  -110.892  -111.149    -0.257     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.117  -125.117     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -207.520  -207.520     0.000     (0)  
+O(0)          2.631e-26
+   O2              1.316e-26   1.316e-26   -25.881   -25.881     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00  -101.714  -101.971    -0.257     (0)  
+   S-2             0.000e+00   0.000e+00  -104.019  -105.047    -1.028     (0)  
+   CuHS            0.000e+00   0.000e+00  -106.800  -106.800     0.000     (0)  
+   H2S             0.000e+00   0.000e+00  -109.005  -109.005     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -110.892  -111.149    -0.257     (0)  
+   CoHS+           0.000e+00   0.000e+00  -110.912  -111.169    -0.257     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.532  -124.789    -0.257     (0)  
+   S2-2            0.000e+00   0.000e+00  -183.365  -184.392    -1.028     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -204.334  -204.591    -0.257     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -207.520  -207.520     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -210.040  -210.040     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -224.650  -224.650     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -265.240  -266.268    -1.028     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -296.649  -297.677    -1.028     (0)  
+   S4-2            0.000e+00   0.000e+00  -348.216  -349.244    -1.028     (0)  
+   S5-2            0.000e+00   0.000e+00  -431.411  -432.439    -1.028     (0)  
+S(2)          0.000e+00
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.459  -111.716    -0.257     (0)  
+   S2O3-2          0.000e+00   0.000e+00  -111.471  -112.499    -1.028     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -119.941  -120.198    -0.257     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.297  -123.297     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -124.546  -124.803    -0.257     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.117  -125.117     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.317  -125.317     0.000     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -138.227  -138.227     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.529  -147.786    -0.257     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -109.286  -110.314    -1.028     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -121.581  -121.838    -0.257     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -135.562  -135.562     0.000     (0)  
+S(4)          1.524e-34
+   SO3-2           1.524e-34   8.071e-36   -33.817   -35.093    -1.276     (0)  
+   H(SO3)-         0.000e+00   0.000e+00   -41.690   -41.947    -0.257     (0)  
+   SO2             0.000e+00   0.000e+00   -54.076   -54.076     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -54.111   -54.111     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -84.322   -85.350    -1.028     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -153.513  -154.541    -1.028     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -222.748  -223.776    -1.028     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -321.374  -322.402    -1.028     (0)  
+S(6)          9.584e-01
+   SO4-2           9.584e-01   3.815e-02    -0.018    -1.418    -1.400     (0)  
+   Mn(SO4)         1.359e-12   1.359e-12   -11.867   -11.867     0.000     (0)  
+   Ni(SO4)2-2      2.179e-13   3.123e-15   -12.662   -14.505    -1.844     (0)  
+   H(SO4)-         6.688e-14   3.446e-14   -13.175   -13.463    -0.288     (0)  
+   Ni(SO4)         1.791e-14   1.791e-14   -13.747   -13.747     0.000     (0)  
+   CoSO4           1.031e-14   1.031e-14   -13.987   -13.987     0.000     (0)  
+   CuSO4           1.791e-19   1.791e-19   -18.747   -18.747     0.000     (0)  
+   Fe(SO4)         7.299e-27   7.299e-27   -26.137   -26.137     0.000     (0)  
+   Al(SO4)+        2.159e-33   1.195e-33   -32.666   -32.923    -0.257     (0)  
+   Fe(SO4)2-       2.833e-36   1.568e-36   -35.548   -35.805    -0.257     (0)  
+   Fe(SO4)+        7.958e-37   4.404e-37   -36.099   -36.356    -0.257     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -65.148   -66.176    -1.028     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -45.341   -45.598    -0.257     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -123.17    -37.74   85.43  Al
+  Alabandite     -101.55   -100.65    0.90  MnS
+  Antlerite       -13.29     -4.38    8.91  Cu3SO4(OH)4
+  Bieberite       -14.18    -16.53   -2.35  CoSO4:7H2O
+  Boehmite         -0.29      7.33    7.62  AlO(OH)
+  Brochantite     -11.58      3.96   15.54  Cu4SO4(OH)6
+  Bunsenite         0.85     13.33   12.48  NiO
+  Cattierite     -168.74   -188.72  -19.98  CoS2
+  Chalcanthite    -18.54    -21.23   -2.69  CuSO4:5H2O
+  Chalcocite      -89.58   -123.60  -34.02  Cu2S
+  Chalcocyanite   -24.00    -21.06    2.94  CuSO4
+  Co(cr)          -26.65    -16.91    9.74  Co
+  Co(FeO2)2(alpha)  18.08     18.81    0.73  Co(FeO2)2
+  Co(OH)2(s)        0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         14.63     69.49   54.86  Co3O4
+  CoO(s)           -0.63     13.14   13.77  CoO
+  Corundum         -3.61     14.69   18.30  Al2O3
+  CoS(alpha)      -95.38   -102.82   -7.44  CoS
+  CoS(beta)       -91.75   -102.82  -11.07  CoS
+  CoSO4(s)        -19.30    -16.29    3.01  CoSO4
+  CoSO4:6H2O(s)   -14.30    -16.50   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -15.27    -16.32   -1.05  CoSO4:H2O
+  Covellite       -85.53   -107.59  -22.06  CuS
+  Cu(cr)          -10.29    -21.68  -11.39  Cu
+  Cu(OH)2(s)        0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -88.38   -119.60  -31.22  Cu1.75S
+  Cu1.934S(cr)    -89.22   -122.55  -33.33  Cu1.934S
+  Cu2O(cr)         -7.02     -7.64   -0.62  Cu2O
+  CuO(s)            0.74      8.37    7.63  CuO
+  Diaspore          0.46      7.33    6.87  AlO(OH)
+  Fe(alpha,cr)    -45.09    -29.20   15.89  Fe
+  Fe(OH)2(cr)     -11.96      0.82   12.78  Fe(OH)2
+  Fe(OH)3(s)       -0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.67      2.84   13.51  Fe0.932O
+  Fe3O4(s)         -6.08      6.52   12.60  Fe3O4
+  FeAl2O4(s)      -11.65     15.55   27.20  FeAl2O4
+  FeO(s)          -12.53      0.86   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)  -0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -112.16   -115.11   -2.95  FeS
+  Gibbsite         -0.45      7.29    7.74  Al(OH)3
+  Goethite          2.64      2.81    0.17  FeOOH
+  GR-SO4          -52.76      5.54   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -416.19   -431.22  -15.03  Fe3S4
+  H2(g)           -30.09    -30.09    0.00  H2
+  H2O(g)           -1.53    -43.03  -41.50  H2O
+  H2S(g)         -108.00   -116.00   -8.00  H2S
+  Hausmannite      14.68     76.00   61.32  Mn3O4
+  Heazlewoodite  -204.74   -221.97  -17.23  Ni3S2
+  Hematite(cr)      6.49      5.66   -0.83  Fe2O3
+  Hematite(s)       5.76      5.66   -0.10  Fe2O3
+  Langite         -13.56      3.93   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.95      2.81    1.86  FeOOH
+  Li(cr)          -53.32     -2.00   51.32  Li
+  Linnaeite      -351.59   -394.35  -42.76  Co3S4
+  Mackinawite    -111.92   -115.11   -3.19  FeS
+  Maghemite         2.87      5.66    2.79  Fe2O3
+  Magnetite        -3.82      6.52   10.34  Fe3O4
+  Manganite         5.05     30.32   25.27  MnOOH
+  Melanterite     -26.54    -28.82   -2.28  FeSO4:7H2O
+  Millerite       -92.50   -102.63  -10.13  NiS
+  Mirabilite       -0.19     -1.42   -1.23  Na2SO4:10H2O
+  Mn(cr)          -54.73    -14.74   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)      -11.44    -14.12   -2.68  Mn(SO4)
+  MnO(s)           -2.59     15.31   17.90  MnO
+  MnO2(s)           3.37     45.37   42.00  MnO2
+  Na(cr)          -46.74     -0.85   45.89  Na
+  Na2O(cr)        -39.10     28.36   67.46  Na2O
+  Ni(cr)          -24.74    -16.72    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -20.85    -16.10    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -14.06    -16.31   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -14.07    -16.34   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          4.56     70.06   65.50  Ni3O4
+  O2(g)           -22.98    -25.88   -2.90  O2
+  Polydymite     -354.51   -393.78  -39.27  Ni3S4
+  Pyrite         -184.19   -201.01  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite     -105.99   -111.31   -5.32  Fe0.87S
+  S(cr)           -83.77    -85.91   -2.14  S
+  Schwertmannite(cr) -15.60     -6.88    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -54.17    -63.11   -8.94  SO2
+  Thenardite       -0.71     -1.07   -0.36  Na2SO4
+  Trevorite         9.57     19.00    9.43  Fe2NiO4
+  Troilite       -111.12   -115.11   -3.99  FeS
+  Vaesite        -170.56   -188.53  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 8.
+------------------------------------
+
+	SOLUTION 1 leachate
+	    temp      25
+	    pH        7 charge
+	    water     1
+	    units     mol/kgw
+	REACTION 1
+	    Al2(SO4)3       2.8642408e-02
+	    Fe2(SO4)3       7.0141362e-03
+	    CuSO4           5.7640499e-02
+	    CoSO4:7H2O      1.9850587e-01
+	    NiSO4:6H2O      3.8959063e-01
+	    MnSO4:H2O       1.7394391e-01
+	    Li2SO4:H2O      1.0081275e-01
+	    Na+             4.0000000e+00
+	    OH-             4.0000000e+00
+	    1.0
+	EQUILIBRIUM_PHASES 1
+	    Gibbsite  0.0  0
+	    Fe(OH)3(s)  0.0  0
+	    Cu(OH)2(s)  0.0  0
+	    Co(OH)2(s)  0.0  0
+	    Ni(OH)2(s)  0.0  0
+	    Mn(OH)2(s)  0.0  0
+	SELECTED_OUTPUT 2
+	    file   C:/Users/super/OneDrive/Desktop/battery-recycle/pipelines/agentloop/EconAgentLoop/engine/run/smoke_staged/20261023_083259_223093/04_run_phreeqc/stage_1_NaOH.csv
+	    reset  true
+	    ph     true
+	    pe     true
+	    temperature true
+	    ionic_strength true
+	    totals Al Fe Cu Co Ni Mn Li Na S
+	    equilibrium_phases Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	    si Gibbsite Fe(OH)3(s) Cu(OH)2(s) Co(OH)2(s) Ni(OH)2(s) Mn(OH)2(s)
+	USER_PUNCH 2
+	    headings seq reagent_cum_mol bm_cum_frac
+	    10 PUNCH 6, 4, 1
+	END
+-------------------------------------------
+Beginning of initial solution calculations.
+-------------------------------------------
+
+Initial solution 1.	leachate
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Pure water     
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =   7.000      Charge balance
+                                       pe  =   4.000    
+                        Activity of water  =   1.000
+                 Ionic strength (mol/kgw)  =   1.000e-07
+                       Mass of water (kg)  =   1.000e+00
+                 Total alkalinity (eq/kg)  =   4.133e-20
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -4.133e-20
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =   2
+                         Gamma iterations  =   2
+                      Osmotic coefficient  =   0.99988
+                                  Total H  = 1.110174e+02
+                                  Total O  = 5.550868e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.000e-07   1.000e-07    -7.000    -7.000    -0.000     (0)  
+   H+              1.000e-07   1.000e-07    -7.000    -7.000    -0.000      0.00
+   H2O             5.551e+01   1.000e+00     1.744    -0.000     0.000     18.07
+H(0)          1.664e-25
+   H2              8.318e-26   8.318e-26   -25.080   -25.080     0.000     (0)  
+O(0)          0.000e+00
+   O2              0.000e+00   0.000e+00   -41.990   -41.990     0.000     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  H2(g)           -22.00    -22.00    0.00  H2
+  H2O(g)           -1.50    -43.00  -41.50  H2O
+  O2(g)           -39.09    -41.99   -2.90  O2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+-----------------------------------------
+Beginning of batch-reaction calculations.
+-----------------------------------------
+
+Reaction step 1.
+
+Using solution 1.	leachate
+Using pure phase assemblage 1.	
+Using reaction 1.	
+
+Reaction 1.	
+
+	  1.000e+00 moles of the following reaction have been added:
+
+	                 Relative
+	Reactant            moles
+
+	Al2(SO4)3            0.02864
+	CoSO4:7H2O           0.19851
+	CuSO4                0.05764
+	Fe2(SO4)3            0.00701
+	Li2SO4:H2O           0.10081
+	MnSO4:H2O            0.17394
+	Na+                  4.00000
+	NiSO4:6H2O           0.38959
+	OH-                  4.00000
+
+	                 Relative
+	Element             moles
+	Al                   0.05728
+	Co                   0.19851
+	Cu                   0.05764
+	Fe                   0.01403
+	H                   12.00368
+	Li                   0.20163
+	Mn                   0.17394
+	Na                   4.00000
+	Ni                   0.38959
+	O                   12.11169
+	S                    1.02746
+
+-------------------------------Phase assemblage--------------------------------
+
+                                                      Moles in assemblage
+Phase               SI  log IAP  log K(T, P)   Initial       Final       Delta
+
+Co(OH)2(s)        0.00    13.11     13.11    0.000e+00   1.983e-01   1.983e-01
+Cu(OH)2(s)        0.00     8.34      8.34    0.000e+00   5.535e-02   5.535e-02
+Fe(OH)3(s)        0.00     2.78      2.78    0.000e+00   1.398e-02   1.398e-02
+Gibbsite         -0.65     7.09      7.74    0.000e+00           0   0.000e+00
+Mn(OH)2(s)        0.00    15.28     15.28    0.000e+00   1.737e-01   1.737e-01
+Ni(OH)2(s)        0.00    13.30     13.30    0.000e+00   3.896e-01   3.896e-01
+
+-----------------------------Solution composition------------------------------
+
+	Elements           Molality       Moles
+
+	Al                5.343e-02   5.728e-02
+	Co                1.960e-04   2.101e-04
+	Cu                2.136e-03   2.290e-03
+	Fe                4.146e-05   4.445e-05
+	Li                1.881e-01   2.016e-01
+	Mn                2.469e-04   2.647e-04
+	Na                3.731e+00   4.000e+00
+	Ni                1.995e-05   2.139e-05
+	S                 9.584e-01   1.027e+00
+
+----------------------------Description of solution----------------------------
+
+                                       pH  =  14.221      Charge balance
+                                       pe  =   0.721      Adjusted to redox equilibrium
+                        Activity of water  =   0.902
+                 Ionic strength (mol/kgw)  =   4.872e+00
+                       Mass of water (kg)  =   1.072e+00
+                 Total alkalinity (eq/kg)  =   2.168e+00
+                         Temperature (°C)  =  25.00
+                  Electrical balance (eq)  =  -2.804e-09
+ Percent error, 100*(Cat-|An|)/(Cat+|An|)  =  -0.00
+                               Iterations  =  56
+                         Gamma iterations  =   9
+                      Osmotic coefficient  =   0.83682
+                                  Total H  = 1.213453e+02
+                                  Total O  = 6.594464e+01
+
+----------------------------Distribution of species----------------------------
+
+                                               Log       Log       Log    mole V
+   Species          Molality    Activity  Molality  Activity     Gamma   cm³/mol
+
+   OH-             1.944e+00   1.501e+00     0.289     0.176    -0.112     (0)  
+   H+              1.096e-14   6.006e-15   -13.960   -14.221    -0.261      0.00
+   H2O             5.551e+01   9.016e-01     1.744    -0.045     0.000     18.07
+Al            5.343e-02
+   Al(OH)4-        4.534e-02   2.485e-02    -1.344    -1.605    -0.261     (0)  
+   NaAl(OH)4       8.095e-03   8.095e-03    -2.092    -2.092     0.000     (0)  
+   Al(OH)3         4.665e-10   4.665e-10    -9.331    -9.331     0.000     (0)  
+   Al(OH)2+        3.922e-18   2.150e-18   -17.406   -17.668    -0.261     (0)  
+   Al(OH)+2        6.769e-26   6.109e-27   -25.169   -26.214    -1.045     (0)  
+   Al+3            8.124e-34   3.627e-36   -33.090   -35.441    -2.350     (0)  
+   Al(SO4)+        3.026e-34   1.658e-34   -33.519   -33.780    -0.261     (0)  
+Co            1.960e-04
+   Co(OH)4-2       1.223e-04   1.104e-05    -3.913    -4.957    -1.045     (0)  
+   Co(OH)3-        7.040e-05   3.859e-05    -4.152    -4.414    -0.261     (0)  
+   Co(OH)2         3.236e-06   3.236e-06    -5.490    -5.490     0.000     (0)  
+   Co(OH)+         9.219e-11   5.053e-11   -10.035   -10.296    -0.261     (0)  
+   Co+2            6.334e-15   5.716e-16   -14.198   -15.243    -1.045     (0)  
+   CoSO4           3.526e-15   3.526e-15   -14.453   -14.453     0.000     (0)  
+   Co2(OH)+3       1.625e-24   7.255e-27   -23.789   -26.139    -2.350     (0)  
+   Co4(OH)4+4      1.078e-30   7.148e-35   -29.968   -34.146    -4.178     (0)  
+   CoHS+           0.000e+00   0.000e+00  -110.715  -110.976    -0.261     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.402  -125.402     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -209.279  -209.279     0.000     (0)  
+Cu(1)         3.235e-08
+   Cu(OH)2-        3.235e-08   1.773e-08    -7.490    -7.751    -0.261     (0)  
+   CuOH            3.911e-12   3.911e-12   -11.408   -11.408     0.000     (0)  
+   Cu+             2.275e-18   1.247e-18   -17.643   -17.904    -0.261     (0)  
+   CuHS            0.000e+00   0.000e+00  -106.307  -106.307     0.000     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -119.722  -119.984    -0.261     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -203.269  -203.530    -0.261     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -294.882  -295.926    -1.045     (0)  
+Cu(2)         2.136e-03
+   Cu(OH)4-2       1.996e-03   9.181e-04    -2.700    -3.037    -0.337     (0)  
+   Cu(OH)3-        1.405e-04   7.699e-05    -3.852    -4.114    -0.261     (0)  
+   Cu(OH)2         1.288e-08   1.288e-08    -7.890    -7.890     0.000     (0)  
+   Cu(OH)+         2.849e-14   1.562e-14   -13.545   -13.806    -0.261     (0)  
+   Cu+2            1.076e-19   9.707e-21   -18.968   -20.013    -1.045     (0)  
+   CuSO4           6.128e-20   6.128e-20   -19.213   -19.213     0.000     (0)  
+   Cu2(OH)2+2      6.632e-22   5.985e-23   -21.178   -22.223    -1.045     (0)  
+   Cu3(OH)4+2      5.911e-24   5.334e-25   -23.228   -24.273    -1.045     (0)  
+   Cu2(OH)+3       6.179e-31   2.758e-33   -30.209   -32.559    -2.350     (0)  
+Fe(2)         1.026e-16
+   Fe(OH)4-2       1.023e-16   9.229e-18   -15.990   -17.035    -1.045     (0)  
+   Fe(OH)3-        3.387e-19   1.857e-19   -18.470   -18.731    -0.261     (0)  
+   Fe(OH)2         1.237e-20   1.237e-20   -19.908   -19.908     0.000     (0)  
+   Fe(OH)+         5.847e-23   3.205e-23   -22.233   -22.494    -0.261     (0)  
+   Fe+2            4.206e-27   3.796e-28   -26.376   -27.421    -1.045     (0)  
+   Fe(SO4)         3.233e-27   3.233e-27   -26.490   -26.490     0.000     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.223  -124.484    -0.261     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -223.777  -223.777     0.000     (0)  
+Fe(3)         4.146e-05
+   Fe(OH)4-        4.146e-05   2.272e-05    -4.382    -4.644    -0.261     (0)  
+   Fe(OH)3         1.660e-10   1.660e-10    -9.780    -9.780     0.000     (0)  
+   Fe(OH)2+        1.161e-16   6.361e-17   -15.935   -16.196    -0.261     (0)  
+   Fe(OH)+2        2.097e-27   1.893e-28   -26.678   -27.723    -1.045     (0)  
+   Fe(SO4)2-       5.155e-37   2.825e-37   -36.288   -36.549    -0.261     (0)  
+   Fe(SO4)+        1.786e-37   9.791e-38   -36.748   -37.009    -0.261     (0)  
+   Fe+3            3.989e-38   1.781e-40   -37.399   -39.749    -2.350     (0)  
+   Fe2(OH)2+4      0.000e+00   0.000e+00   -49.788   -53.966    -4.178     (0)  
+   Fe3(OH)4+5      0.000e+00   0.000e+00   -62.314   -68.842    -6.529     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.798  -148.059    -0.261     (0)  
+H(0)          2.166e-33
+   H2              1.083e-33   1.083e-33   -32.965   -32.965     0.000     (0)  
+Li            1.881e-01
+   Li+             1.881e-01   1.031e-01    -0.726    -0.987    -0.261     (0)  
+Mn(2)         2.469e-04
+   Mn(OH)4-2       2.385e-04   2.152e-05    -3.623    -4.667    -1.045     (0)  
+   Mn(OH)3-        8.272e-06   4.534e-06    -5.082    -5.344    -0.261     (0)  
+   Mn(OH)2         1.202e-07   1.202e-07    -6.920    -6.920     0.000     (0)  
+   Mn2(OH)3+       5.555e-09   3.045e-09    -8.255    -8.516    -0.261     (0)  
+   Mn(OH)+         5.952e-10   3.262e-10    -9.225    -9.486    -0.261     (0)  
+   Mn+2            9.368e-13   8.454e-14   -12.028   -13.073    -1.045     (0)  
+   Mn(SO4)         4.648e-13   4.648e-13   -12.333   -12.333     0.000     (0)  
+   Mn2(OH)+3       1.909e-20   8.524e-23   -19.719   -22.069    -2.350     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.382  -123.382     0.000     (0)  
+Mn(3)         3.081e-36
+   Mn+3            3.081e-36   1.375e-38   -35.511   -37.862    -2.350     (0)  
+Mn(5)         1.078e-08
+   MnO4-3          1.078e-08   4.814e-11    -7.967   -10.317    -2.350     (0)  
+Mn(6)         1.043e-14
+   MnO4-2          1.043e-14   9.414e-16   -13.982   -15.026    -1.045     (0)  
+Mn(7)         3.769e-24
+   MnO4-           3.769e-24   2.066e-24   -23.424   -23.685    -0.261     (0)  
+Na            3.731e+00
+   Na+             3.723e+00   1.874e+00     0.571     0.273    -0.298     (0)  
+   NaAl(OH)4       8.095e-03   8.095e-03    -2.092    -2.092     0.000     (0)  
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.065  -111.326    -0.261     (0)  
+Ni            1.995e-05
+   Ni(OH)2         1.995e-05   1.995e-05    -4.700    -4.700     0.000     (0)  
+   Ni(OH)+         6.993e-11   3.833e-11   -10.155   -10.416    -0.261     (0)  
+   Ni(SO4)2-2      9.146e-14   8.660e-16   -13.039   -15.062    -2.024     (0)  
+   Ni+2            9.810e-15   8.853e-16   -14.008   -15.053    -1.045     (0)  
+   Ni(SO4)         6.128e-15   6.128e-15   -14.213   -14.213     0.000     (0)  
+   Ni2(OH)+3       6.621e-25   2.955e-27   -24.179   -26.529    -2.350     (0)  
+   Ni4(OH)4+4      1.420e-27   9.423e-32   -26.848   -31.026    -4.178     (0)  
+   NiHS+           0.000e+00   0.000e+00  -110.695  -110.956    -0.261     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.202  -125.202     0.000     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -206.759  -206.759     0.000     (0)  
+O(0)          9.817e-27
+   O2              4.908e-27   4.908e-27   -26.309   -26.309     0.000     (0)  
+S(-2)         0.000e+00
+   HS-             0.000e+00   0.000e+00  -101.142  -101.403    -0.261     (0)  
+   S-2             0.000e+00   0.000e+00  -103.237  -104.282    -1.045     (0)  
+   CuHS            0.000e+00   0.000e+00  -106.307  -106.307     0.000     (0)  
+   H2S             0.000e+00   0.000e+00  -108.635  -108.635     0.000     (0)  
+   NiHS+           0.000e+00   0.000e+00  -110.695  -110.956    -0.261     (0)  
+   CoHS+           0.000e+00   0.000e+00  -110.715  -110.976    -0.261     (0)  
+   Fe(HS)+         0.000e+00   0.000e+00  -124.223  -124.484    -0.261     (0)  
+   S2-2            0.000e+00   0.000e+00  -182.416  -183.461    -1.045     (0)  
+   Cu(HS)2-        0.000e+00   0.000e+00  -203.269  -203.530    -0.261     (0)  
+   Ni(HS)2         0.000e+00   0.000e+00  -206.759  -206.759     0.000     (0)  
+   Co(HS)2         0.000e+00   0.000e+00  -209.279  -209.279     0.000     (0)  
+   Fe(HS)2         0.000e+00   0.000e+00  -223.777  -223.777     0.000     (0)  
+   S3-2            0.000e+00   0.000e+00  -264.125  -265.170    -1.045     (0)  
+   Cu2S(HS)2-2     0.000e+00   0.000e+00  -294.882  -295.926    -1.045     (0)  
+   S4-2            0.000e+00   0.000e+00  -346.934  -347.979    -1.045     (0)  
+   S5-2            0.000e+00   0.000e+00  -429.964  -431.008    -1.045     (0)  
+S(2)          0.000e+00
+   Na(S2O3)-       0.000e+00   0.000e+00  -111.065  -111.326    -0.261     (0)  
+   S2O3-2          0.000e+00   0.000e+00  -111.165  -112.209    -1.045     (0)  
+   CuS2O3-         0.000e+00   0.000e+00  -119.722  -119.984    -0.261     (0)  
+   Mn(S2O3)        0.000e+00   0.000e+00  -123.382  -123.382     0.000     (0)  
+   H(S2O3)-        0.000e+00   0.000e+00  -124.450  -124.711    -0.261     (0)  
+   Ni(S2O3)        0.000e+00   0.000e+00  -125.202  -125.202     0.000     (0)  
+   CoS2O3          0.000e+00   0.000e+00  -125.402  -125.402     0.000     (0)  
+   H2(S2O3)        0.000e+00   0.000e+00  -138.332  -138.332     0.000     (0)  
+   FeS2O3+         0.000e+00   0.000e+00  -147.798  -148.059    -0.261     (0)  
+S(3)          0.000e+00
+   S2O4-2          0.000e+00   0.000e+00  -109.194  -110.239    -1.045     (0)  
+   HS2O4-          0.000e+00   0.000e+00  -121.699  -121.960    -0.261     (0)  
+   H2S2O4          0.000e+00   0.000e+00  -135.882  -135.882     0.000     (0)  
+S(4)          2.356e-34
+   SO3-2           2.356e-34   1.071e-35   -33.628   -34.970    -1.342     (0)  
+   H(SO3)-         0.000e+00   0.000e+00   -41.761   -42.022    -0.261     (0)  
+   SO2             0.000e+00   0.000e+00   -54.338   -54.338     0.000     (0)  
+   H2(SO3)         0.000e+00   0.000e+00   -54.383   -54.383     0.000     (0)  
+   S2O5-2          0.000e+00   0.000e+00   -84.444   -85.488    -1.045     (0)  
+   S3O6-2          0.000e+00   0.000e+00  -153.682  -154.727    -1.045     (0)  
+   S4O6-2          0.000e+00   0.000e+00  -222.752  -223.796    -1.045     (0)  
+   S5O6-2          0.000e+00   0.000e+00  -321.211  -322.255    -1.045     (0)  
+S(6)          9.584e-01
+   SO4-2           9.584e-01   3.092e-02    -0.018    -1.510    -1.491     (0)  
+   Mn(SO4)         4.648e-13   4.648e-13   -12.333   -12.333     0.000     (0)  
+   Ni(SO4)2-2      9.146e-14   8.660e-16   -13.039   -15.062    -2.024     (0)  
+   H(SO4)-         3.525e-14   1.773e-14   -13.453   -13.751    -0.298     (0)  
+   Ni(SO4)         6.128e-15   6.128e-15   -14.213   -14.213     0.000     (0)  
+   CoSO4           3.526e-15   3.526e-15   -14.453   -14.453     0.000     (0)  
+   CuSO4           6.128e-20   6.128e-20   -19.213   -19.213     0.000     (0)  
+   Fe(SO4)         3.233e-27   3.233e-27   -26.490   -26.490     0.000     (0)  
+   Al(SO4)+        3.026e-34   1.658e-34   -33.519   -33.780    -0.261     (0)  
+   Fe(SO4)2-       5.155e-37   2.825e-37   -36.288   -36.549    -0.261     (0)  
+   Fe(SO4)+        1.786e-37   9.791e-38   -36.748   -37.009    -0.261     (0)  
+   S2O8-2          0.000e+00   0.000e+00   -65.912   -66.957    -1.045     (0)  
+S(8)          0.000e+00
+   HSO5-           0.000e+00   0.000e+00   -45.840   -46.101    -0.261     (0)  
+
+------------------------------Saturation indices-------------------------------
+
+  Phase               SI** log IAP   log K(298 K,   1 atm)
+
+  Al(cr)         -123.03    -37.60   85.43  Al
+  Alabandite     -101.15   -100.25    0.90  MnS
+  Antlerite       -13.75     -4.84    8.91  Cu3SO4(OH)4
+  Bieberite       -14.72    -17.07   -2.35  CoSO4:7H2O
+  Boehmite         -0.49      7.13    7.62  AlO(OH)
+  Brochantite     -12.04      3.50   15.54  Cu4SO4(OH)6
+  Bunsenite         0.86     13.34   12.48  NiO
+  Cattierite     -168.18   -188.16  -19.98  CoS2
+  Chalcanthite    -19.06    -21.75   -2.69  CuSO4:5H2O
+  Chalcocite      -88.97   -122.99  -34.02  Cu2S
+  Chalcocyanite   -24.46    -21.52    2.94  CuSO4
+  Co(cr)          -26.43    -16.69    9.74  Co
+  Co(FeO2)2(alpha)  18.12     18.85    0.73  Co(FeO2)2
+  Co(OH)2(s)        0.00     13.11   13.11  Co(OH)2
+  Co(OH)2(s,blue)  -0.69     13.11   13.80  Co(OH)2
+  Co(OH)2(s,rose1)   0.91     13.11   12.20  Co(OH)2
+  Co(OH)2(s,rose2)  -0.09     13.11   13.20  Co(OH)2
+  Co3O4(s)         14.45     69.31   54.86  Co3O4
+  CoO(s)           -0.62     13.15   13.77  CoO
+  Corundum         -3.99     14.31   18.30  Al2O3
+  CoS(alpha)      -94.98   -102.42   -7.44  CoS
+  CoS(beta)       -91.35   -102.42  -11.07  CoS
+  CoSO4(s)        -19.76    -16.75    3.01  CoSO4
+  CoSO4:6H2O(s)   -14.82    -17.02   -2.20  CoSO4:6H2O
+  CoSO4:H2O(s)    -15.75    -16.80   -1.05  CoSO4:H2O
+  Covellite       -85.13   -107.19  -22.06  CuS
+  Cu(cr)          -10.07    -21.46  -11.39  Cu
+  Cu(OH)2(s)        0.00      8.34    8.34  Cu(OH)2
+  Cu1.75S(cr)     -87.82   -119.04  -31.22  Cu1.75S
+  Cu1.934S(cr)    -88.62   -121.95  -33.33  Cu1.934S
+  Cu2O(cr)         -6.79     -7.41   -0.62  Cu2O
+  CuO(s)            0.75      8.38    7.63  CuO
+  Diaspore          0.26      7.13    6.87  AlO(OH)
+  Fe(alpha,cr)    -44.75    -28.86   15.89  Fe
+  Fe(OH)2(cr)     -11.85      0.93   12.78  Fe(OH)2
+  Fe(OH)3(s)        0.00      2.78    2.78  Fe(OH)3
+  Fe0.932O(s)     -10.57      2.94   13.51  Fe0.932O
+  Fe3O4(s)         -5.93      6.67   12.60  Fe3O4
+  FeAl2O4(s)      -11.91     15.29   27.20  FeAl2O4
+  FeO(s)          -12.41      0.98   13.39  FeO
+  Ferrihydrite(am)  -1.14      2.78    3.92  Fe(OH)3
+  Ferrihydrite(cr)   1.56      2.78    1.22  Fe(OH)3
+  Ferrihydrite(s)   0.00      2.78    2.78  Fe(OH)3
+  FeS(am)        -111.65   -114.60   -2.95  FeS
+  Gibbsite         -0.65      7.09    7.74  Al(OH)3
+  Goethite          2.65      2.82    0.17  FeOOH
+  GR-SO4          -52.77      5.53   58.30  Fe4Fe2(OH)12SO4
+  Greigite       -414.52   -429.55  -15.03  Fe3S4
+  H2(g)           -29.89    -29.89    0.00  H2
+  H2O(g)           -1.54    -43.04  -41.50  H2O
+  H2S(g)         -107.62   -115.62   -8.00  H2S
+  Hausmannite      14.50     75.82   61.32  Mn3O4
+  Heazlewoodite  -203.73   -220.96  -17.23  Ni3S2
+  Hematite(cr)      6.52      5.69   -0.83  Fe2O3
+  Hematite(s)       5.79      5.69   -0.10  Fe2O3
+  Langite         -14.04      3.45   17.49  Cu4SO4(OH)6:H2O
+  Lepidocrocite     0.96      2.82    1.86  FeOOH
+  Li(cr)          -53.03     -1.71   51.32  Li
+  Linnaeite      -350.25   -393.01  -42.76  Co3S4
+  Mackinawite    -111.41   -114.60   -3.19  FeS
+  Maghemite         2.90      5.69    2.79  Fe2O3
+  Magnetite        -3.67      6.67   10.34  Fe3O4
+  Manganite         4.95     30.22   25.27  MnOOH
+  Melanterite     -26.97    -29.25   -2.28  FeSO4:7H2O
+  Millerite       -92.10   -102.23  -10.13  NiS
+  Mirabilite       -0.18     -1.41   -1.23  Na2SO4:10H2O
+  Mn(cr)          -54.51    -14.52   39.99  Mn
+  Mn(OH)2(s)        0.00     15.28   15.28  Mn(OH)2
+  Mn(SO4)(s)      -11.90    -14.58   -2.68  Mn(SO4)
+  MnO(s)           -2.58     15.32   17.90  MnO
+  MnO2(s)           3.17     45.17   42.00  MnO2
+  Na(cr)          -46.34     -0.45   45.89  Na
+  Na2O(cr)        -38.52     28.94   67.46  Na2O
+  Ni(cr)          -24.52    -16.50    8.02  Ni
+  Ni(OH)2(s)        0.00     13.30   13.30  Ni(OH)2
+  Ni(SO4)(cr)     -21.31    -16.56    4.75  Ni(SO4)
+  Ni(SO4):6H2O(s) -14.58    -16.83   -2.25  Ni(SO4):6H2O
+  Ni(SO4):7H2O(s) -14.61    -16.88   -2.27  Ni(SO4):7H2O
+  Ni3O4(s)          4.38     69.88   65.50  Ni3O4
+  O2(g)           -23.41    -26.31   -2.90  O2
+  Polydymite     -353.17   -392.44  -39.27  Ni3S4
+  Pyrite         -183.52   -200.34  -16.82  FeS2
+  Pyrochroite      -0.02     15.28   15.30  Mn(OH)2
+  Pyrrhotite     -105.53   -110.85   -5.32  Fe0.87S
+  S(cr)           -83.60    -85.74   -2.14  S
+  Schwertmannite(cr) -15.98     -7.26    8.72  Fe8O8(OH)6SO4
+  SO2(g)          -54.43    -63.37   -8.94  SO2
+  Thenardite       -0.60     -0.96   -0.36  Na2SO4
+  Trevorite         9.61     19.04    9.43  Fe2NiO4
+  Troilite       -110.61   -114.60   -3.99  FeS
+  Vaesite        -170.00   -187.97  -17.97  NiS2
+
+**For a gas, SI = log10(fugacity). Fugacity = pressure * phi / 1 atm.
+  For ideal gases, phi = 1.
+
+------------------
+End of simulation.
+------------------
+
+------------------------------------
+Reading input data for simulation 9.
+------------------------------------
+
+-------------------------------
+End of Run after 0.208 Seconds.
+-------------------------------
+

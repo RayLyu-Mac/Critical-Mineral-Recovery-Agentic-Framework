@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent loop chain</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #111; background: #f3f4f6; font: 15px/1.45 "Segoe UI", sans-serif; }
+  header, nav, main { padding-left: 28px; padding-right: 28px; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; background: #fff; z-index: 3; }
+  .titleblock { min-width: 0; }
+  h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  .loopname { color: #555; font-size: 13px; margin-left: 12px; font-weight: 400; }
+  details { position: relative; }
+  summary { cursor: pointer; list-style: none; border: 1px solid #ddd; padding: 6px 12px; font-size: 13px; }
+  summary::-webkit-details-marker { display: none; }
+  .menu { position: absolute; right: 0; top: calc(100% + 8px); width: min(420px, 70vw); max-height: 70vh; overflow: auto; background: #fff; border: 1px solid #e6e6e6; padding: 12px 14px; z-index: 4; }
+  .menu p { margin: 0 0 10px; }
+  .menu b { display: block; font-size: 12px; color: #555; font-weight: 600; }
+  .menu span { white-space: pre-wrap; word-break: break-word; }
+  nav { display: flex; gap: 8px; overflow-x: auto; border-bottom: 1px solid #e5e7eb; position: sticky; top: var(--head, 56px); background: #f3f4f6; z-index: 2; padding-top: 10px; padding-bottom: 10px; }
+  nav button { border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; color: #333; padding: 8px 12px; cursor: pointer; white-space: nowrap; font: inherit; }
+  nav button.on { background: #e7eef8; border-color: #c5d4ea; color: #111; }
+  main { padding-top: 28px; padding-bottom: 72px; }
+  .meta { color: #555; font-size: 13px; margin: 0 0 8px; }
+  h2 { margin: 0 0 18px; font-size: 22px; font-weight: 600; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+  .stack { display: flex; flex-direction: column; gap: 14px; }
+  section { margin: 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 14px 16px; }
+  section h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #666; font-weight: 600; }
+  pre { margin: 0; white-space: pre-wrap; word-break: break-word; font: 13px/1.45 Consolas, ui-monospace, monospace; }
+  #figure { margin-top: 12px; }
+  #figure img { max-width: 100%; height: auto; display: block; }
+  .arrow { width: 48px; height: 72px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; cursor: pointer; font-size: 22px; color: #111; }
+  .arrow:disabled { color: #bbb; cursor: default; }
+  .stage-bar { display: grid; grid-template-columns: 48px minmax(0, 1fr) 48px; gap: 12px; align-items: center; margin-bottom: 16px; }
+  .stage-bar h2 { margin: 0; }
+  .summary { margin: 12px 28px 0; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; position: static; }
+  .summary > summary { list-style: disclosure-triangle; border: 0; padding: 10px 14px; font-weight: 600; }
+  .summary > summary::-webkit-details-marker { display: revert; }
+  .conclusion { margin: 0 14px 12px; color: #333; font-size: 14px; }
+  .story { margin: 0; padding: 0 14px 14px; }
+  .story-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  #play { border: 1px solid #e5e7eb; background: #fff; border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; }
+  .dots { display: flex; gap: 6px; }
+  .dot { width: 9px; height: 9px; border: 0; border-radius: 50%; background: #d1d5db; padding: 0; cursor: pointer; }
+  .dot.on { background: #1d4ed8; }
+  .story-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+  .story-cols > div { background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 12px 14px; }
+  .story-cols h3 { margin: 0 0 8px; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: #666; font-weight: 600; }
+  .kv p { display: flex; justify-content: space-between; gap: 12px; margin: 0; padding: 4px 6px; border-radius: 4px; }
+  .kv b { font-weight: 600; }
+  .enter { animation: rise .45s ease; }
+  .chg { animation: flash 1.2s ease; }
+  @keyframes rise { from { opacity: .15; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes flash { 0% { background: #fde68a; } 100% { background: transparent; } }
+  @media (prefers-reduced-motion: reduce) { .enter, .chg { animation: none; } }
+</style>
+</head>
+<body>
+<header id="topbar">
+  <div class="titleblock">
+    <h1 id="title">Agent loop</h1>
+  </div>
+  <details>
+    <summary>Run details</summary>
+    <div class="menu" id="menu"></div>
+  </details>
+</header>
+<details class="summary">
+  <summary>Summary</summary>
+  <p id="conclusion" class="conclusion"></p>
+  <div class="story">
+    <div class="story-head">
+      <button id="play" type="button">Play</button>
+      <div class="dots" id="dots"></div>
+      <span id="story-loop"></span>
+    </div>
+    <div class="story-cols">
+      <div><h3>Config</h3><div class="kv" id="config-view"></div></div>
+      <div><h3>Result</h3><div class="kv" id="result-view"></div></div>
+    </div>
+  </div>
+</details>
+<nav id="nav" aria-label="Stages"></nav>
+<main>
+  <div class="stage-bar">
+    <button class="arrow" id="prev" type="button" aria-label="Previous loop">&#8592;</button>
+    <div>
+      <p class="meta" id="meta"></p>
+      <h2 id="stage"></h2>
+    </div>
+    <button class="arrow" id="next" type="button" aria-label="Next loop">&#8594;</button>
+  </div>
+  <div class="cols">
+    <section><h3>Thinking</h3><pre id="thinking"></pre></section>
+    <div class="stack">
+      <section><h3>Input</h3><pre id="input"></pre></section>
+      <section><h3>Output</h3><div id="figure" hidden></div><pre id="output"></pre></section>
+    </div>
+  </div>
+</main>
+<script>
+const DATA = __DATA__;
+const stageIndex = { value: 0 };
+const loopIndex = { value: 0 };
+const title = document.getElementById("title");
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+const meta = document.getElementById("meta");
+const stageEl = document.getElementById("stage");
+const thinking = document.getElementById("thinking");
+const input = document.getElementById("input");
+const output = document.getElementById("output");
+const figure = document.getElementById("figure");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
+
+title.textContent = DATA.title;
+DATA.props.forEach(function (row) {
+  const p = document.createElement("p");
+  const b = document.createElement("b");
+  const s = document.createElement("span");
+  b.textContent = row[0];
+  s.textContent = row[1];
+  p.appendChild(b);
+  p.appendChild(s);
+  menu.appendChild(p);
+});
+DATA.stages.forEach(function (stage, i) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = stage.nav;
+  btn.addEventListener("click", function () {
+    stageIndex.value = i;
+    draw();
+  });
+  nav.appendChild(btn);
+});
+function currentLoop() {
+  return DATA.loops[loopIndex.value] || null;
+}
+
+function paneFor(stage) {
+  if (!stage.loop) return stage;
+  const loop = currentLoop();
+  const key = loop ? String(loop.id) : "";
+  return (stage.views && stage.views[key]) || { thinking: "No text recorded.", input: "No text recorded.", output: "No text recorded." };
+}
+
+function draw() {
+  const stage = DATA.stages[stageIndex.value];
+  const pane = paneFor(stage);
+  const buttons = nav.querySelectorAll("button");
+  buttons.forEach(function (btn, i) { btn.classList.toggle("on", i === stageIndex.value); });
+  const loop = currentLoop();
+  const loopText = loop ? ("Loop " + loop.id + (loop.note ? " " + loop.note : "") + " · " + loop.status) : "No loops";
+  let line = stage.kind + " · " + stage.where;
+  if (stage.exit !== null && stage.exit !== undefined) line += " · exit " + stage.exit;
+  line += " · " + loopText;
+  if (!stage.loop) line += " · same for every loop";
+  meta.textContent = line;
+  stageEl.textContent = stage.title;
+  thinking.textContent = pane.thinking;
+  input.textContent = pane.input;
+  output.textContent = pane.output;
+  figure.replaceChildren();
+  const sources = pane.images || (pane.image ? [pane.image] : []);
+  sources.forEach(function (src) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Loop plot";
+    figure.appendChild(img);
+  });
+  figure.hidden = sources.length === 0;
+  const last = Math.max(DATA.loops.length - 1, 0);
+  prev.disabled = loopIndex.value <= 0;
+  next.disabled = loopIndex.value >= last;
+  const mark = title.querySelector(".loopname");
+  if (mark) mark.textContent = loopText;
+}
+
+const mark = document.createElement("span");
+mark.className = "loopname";
+title.appendChild(mark);
+const conclusion = document.getElementById("conclusion");
+const play = document.getElementById("play");
+const dots = document.getElementById("dots");
+const storyLoop = document.getElementById("story-loop");
+const configView = document.getElementById("config-view");
+const resultView = document.getElementById("result-view");
+const topbar = document.getElementById("topbar");
+const story = DATA.story || { conclusion: "", frames: [] };
+let storyIndex = 0;
+let timer = null;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+conclusion.textContent = story.conclusion || "No conclusion recorded.";
+story.frames.forEach(function (frame, i) {
+  const dot = document.createElement("button");
+  dot.type = "button";
+  dot.className = "dot";
+  dot.setAttribute("aria-label", "Loop " + frame.loop);
+  dot.addEventListener("click", function () {
+    stopPlay();
+    const found = DATA.loops.findIndex(function (loop) { return loop.id === frame.loop; });
+    if (found >= 0) loopIndex.value = found;
+    storyIndex = i;
+    draw();
+    paintStory();
+  });
+  dots.appendChild(dot);
+});
+function fillKv(el, rows) {
+  el.replaceChildren();
+  (rows || []).forEach(function (row) {
+    const p = document.createElement("p");
+    if (row.changed) p.className = "chg";
+    const b = document.createElement("b");
+    const s = document.createElement("span");
+    b.textContent = row.name;
+    s.textContent = row.value;
+    p.appendChild(b);
+    p.appendChild(s);
+    el.appendChild(p);
+  });
+}
+function pulse(el) {
+  el.classList.remove("enter");
+  void el.offsetWidth;
+  el.classList.add("enter");
+}
+function paintStory() {
+  const frame = story.frames[storyIndex];
+  dots.querySelectorAll("button").forEach(function (dot, i) { dot.classList.toggle("on", i === storyIndex); });
+  if (!frame) {
+    storyLoop.textContent = "No loops";
+    return;
+  }
+  storyLoop.textContent = "Loop " + frame.loop;
+  fillKv(configView, frame.config);
+  fillKv(resultView, frame.result);
+  if (!reduceMotion) { pulse(configView); pulse(resultView); }
+}
+function stopPlay() {
+  if (timer) clearInterval(timer);
+  timer = null;
+  play.textContent = "Play";
+}
+function tick() {
+  if (!story.frames.length) return;
+  storyIndex = (storyIndex + 1) % story.frames.length;
+  paintStory();
+}
+function startPlay() {
+  if (story.frames.length < 2 || reduceMotion) return;
+  stopPlay();
+  play.textContent = "Pause";
+  timer = setInterval(tick, 2200);
+}
+play.addEventListener("click", function () {
+  if (timer) stopPlay();
+  else startPlay();
+});
+function pinNav() {
+  document.documentElement.style.setProperty("--head", topbar.offsetHeight + "px");
+}
+window.addEventListener("resize", pinNav);
+function shiftLoop(step) {
+  const last = Math.max(DATA.loops.length - 1, 0);
+  const nextIndex = loopIndex.value + step;
+  if (nextIndex < 0 || nextIndex > last) return;
+  stopPlay();
+  loopIndex.value = nextIndex;
+  draw();
+  syncStory();
+}
+prev.addEventListener("click", function () { shiftLoop(-1); });
+next.addEventListener("click", function () { shiftLoop(1); });
+function syncStory() {
+  const loop = currentLoop();
+  if (!loop) return;
+  const found = story.frames.findIndex(function (frame) { return frame.loop === loop.id; });
+  if (found >= 0) storyIndex = found;
+  paintStory();
+}
+document.addEventListener("keydown", function (event) {
+  if (event.key === "ArrowLeft") prev.click();
+  if (event.key === "ArrowRight") next.click();
+});
+draw();
+pinNav();
+paintStory();
+if (!reduceMotion && story.frames.length > 1) startPlay();
+</script>
+</body>
+</html>

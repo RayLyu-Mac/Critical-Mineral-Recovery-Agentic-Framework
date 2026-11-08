@@ -1,0 +1,2 @@
+Al_sulfate_mol,Fe_sulfate_mol,Cu_sulfate_mol,Co_sulfate_mol,Ni_sulfate_mol,Mn_sulfate_mol,Li_salt_mol,comp_id,parent_comp_id,chem,li_ratio,nmc_total_mol,ligand,ratio,salt_reference
+0.02864240830045302,0.014028272364303443,0.05764049871561931,0.19850586979722515,0.38959062547557455,0.17394391196308126,0.10081275398562052,1,1,RECIPE,0.2645863737102725,0.762040407235881,no ligand,0.0,"feed_panel recipe, 1 L salt masses"

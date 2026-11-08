@@ -1,0 +1,23 @@
+
+Input file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\step_chain\03_make_phreeqc_deck\stage1_NaOH.phr
+
+Output file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\EconAgentLoop\engine\run\step_chain\04_run_phreeqc\stage1_NaOH.out
+
+Database file: C:\Users\super\OneDrive\Desktop\battery-recycle\pipelines\agentloop\AgentLoopDemo\script\data\sit.dat
+
+              â–ˆâ–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–€â–ˆ
+              â•‘                                            â•‘
+              â•‘             * PHREEQC-3.8.6 *              â•‘
+              â•‘                                            â•‘
+              â•‘      A hydrogeochemical transport model    â•‘
+              â•‘                                            â•‘
+              â•‘                    by                      â•‘
+              â•‘       D.L. Parkhurst and C.A.J. Appelo     â•‘
+              â•‘                                            â•‘
+              â•‘              January  7, 2025              â•‘
+              â–ˆâ–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–ˆ
+
+
+Initializing...                                                                 
+
+End of Run after 0.169 Seconds.

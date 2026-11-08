@@ -1,0 +1,261 @@
+{
+  "basis": "phreeqc_selected_output_totals_are_moles",
+  "feed_mol": {
+    "Ni": 0.3895906254755745,
+    "Co": 0.1985058697972251,
+    "Mn": 0.1739439119630812,
+    "Al": 0.057284816600906,
+    "Fe": 0.0140282723643034,
+    "Cu": 0.0576404987156193,
+    "Li": 0.201625507971241
+  },
+  "purity_threshold": 0.7,
+  "windows": {
+    "low": {
+      "status": "OK",
+      "assignment": "Al",
+      "cuts": [
+        {
+          "cut": 1,
+          "pH": 5.7919,
+          "metal": "Al",
+          "target_pH": 4.16,
+          "purity": 0.31119617640233865,
+          "recovery": 0.9999987390201402,
+          "recovered_mol": 0.057284744365906,
+          "usable": false,
+          "revenue_usd": 0.0
+        }
+      ],
+      "metals": {
+        "Al": {
+          "cut": 1,
+          "pH": 5.7919,
+          "target_pH": 4.16,
+          "purity": 0.31119617640233865,
+          "recovery": 0.9999987390201402,
+          "recovered_mol": 0.057284744365906,
+          "usable": false,
+          "revenue_usd": 0.0
+        },
+        "Fe": {
+          "cut": null,
+          "cut_pH": null,
+          "purity": 0.0,
+          "recovery": 0.0,
+          "recovered_mol": 0.0,
+          "revenue_usd": 0.0,
+          "usable": false
+        },
+        "Cu": {
+          "cut": null,
+          "cut_pH": null,
+          "purity": 0.0,
+          "recovery": 0.0,
+          "recovered_mol": 0.0,
+          "revenue_usd": 0.0,
+          "usable": false
+        }
+      },
+      "window": "pH <= PH_SPLIT"
+    },
+    "high": {
+      "status": "OK",
+      "assignment": "Co,Mn,Ni",
+      "cuts": [
+        {
+          "cut": 1,
+          "pH": 5.80235,
+          "metal": "Co",
+          "target_pH": 5.8,
+          "purity": 0.5912063307004993,
+          "recovery": 0.5206193655913981,
+          "recovered_mol": 0.103346,
+          "usable": false,
+          "revenue_usd": 0.0
+        },
+        {
+          "cut": 2,
+          "pH": 7.48306,
+          "metal": "Mn",
+          "target_pH": 6.05,
+          "purity": 0.2706617942430572,
+          "recovery": 0.523045267714286,
+          "recovered_mol": 0.09098054000000001,
+          "usable": false,
+          "revenue_usd": 0.0
+        },
+        {
+          "cut": 3,
+          "pH": 9.08261,
+          "metal": "Ni",
+          "target_pH": 8.55,
+          "purity": 0.999896339116389,
+          "recovery": 0.526945430859375,
+          "recovered_mol": 0.20529299999999998,
+          "usable": true,
+          "revenue_usd": 0.19278950665919997
+        }
+      ],
+      "metals": {
+        "Co": {
+          "cut": 1,
+          "pH": 5.80235,
+          "target_pH": 5.8,
+          "purity": 0.5912063307004993,
+          "recovery": 0.5206193655913981,
+          "recovered_mol": 0.103346,
+          "usable": false,
+          "revenue_usd": 0.0
+        },
+        "Mn": {
+          "cut": 2,
+          "pH": 7.48306,
+          "target_pH": 6.05,
+          "purity": 0.2706617942430572,
+          "recovery": 0.523045267714286,
+          "recovered_mol": 0.09098054000000001,
+          "usable": false,
+          "revenue_usd": 0.0
+        },
+        "Ni": {
+          "cut": 3,
+          "pH": 9.08261,
+          "target_pH": 8.55,
+          "purity": 0.999896339116389,
+          "recovery": 0.526945430859375,
+          "recovered_mol": 0.20529299999999998,
+          "usable": true,
+          "revenue_usd": 0.19278950665919997
+        }
+      },
+      "window": "pH > PH_SPLIT"
+    }
+  },
+  "lithium": {
+    "source": "final_brine",
+    "purity": 0.9537395735545248,
+    "recovery": 0.9606423410852714,
+    "recovered_mol": 0.19369,
+    "revenue_usd": 0.02016603435,
+    "usable": true,
+    "options": [
+      {
+        "source": "low_solid",
+        "purity": 0.0,
+        "recovery": 0.0,
+        "recovered_mol": 0.0,
+        "revenue_usd": 0.0,
+        "usable": false
+      },
+      {
+        "source": "high_solid",
+        "purity": 0.0,
+        "recovery": 0.0,
+        "recovered_mol": 0.0,
+        "revenue_usd": 0.0,
+        "usable": false
+      },
+      {
+        "source": "final_brine",
+        "purity": 0.9537395735545248,
+        "recovery": 0.9606423410852714,
+        "recovered_mol": 0.19369,
+        "revenue_usd": 0.02016603435,
+        "usable": true
+      }
+    ]
+  },
+  "metals": {
+    "Ni": {
+      "cut": 3,
+      "pH": 9.08261,
+      "target_pH": 8.55,
+      "purity": 0.999896339116389,
+      "recovery": 0.526945430859375,
+      "recovered_mol": 0.20529299999999998,
+      "usable": true,
+      "revenue_usd": 0.19278950665919997
+    },
+    "Co": {
+      "cut": 1,
+      "pH": 5.80235,
+      "target_pH": 5.8,
+      "purity": 0.5912063307004993,
+      "recovery": 0.5206193655913981,
+      "recovered_mol": 0.103346,
+      "usable": false,
+      "revenue_usd": 0.0
+    },
+    "Mn": {
+      "cut": 2,
+      "pH": 7.48306,
+      "target_pH": 6.05,
+      "purity": 0.2706617942430572,
+      "recovery": 0.523045267714286,
+      "recovered_mol": 0.09098054000000001,
+      "usable": false,
+      "revenue_usd": 0.0
+    },
+    "Al": {
+      "cut": 1,
+      "pH": 5.7919,
+      "target_pH": 4.16,
+      "purity": 0.31119617640233865,
+      "recovery": 0.9999987390201402,
+      "recovered_mol": 0.057284744365906,
+      "usable": false,
+      "revenue_usd": 0.0
+    },
+    "Fe": {
+      "cut": null,
+      "cut_pH": null,
+      "purity": 0.0,
+      "recovery": 0.0,
+      "recovered_mol": 0.0,
+      "revenue_usd": 0.0,
+      "usable": false
+    },
+    "Cu": {
+      "cut": null,
+      "cut_pH": null,
+      "purity": 0.0,
+      "recovery": 0.0,
+      "recovered_mol": 0.0,
+      "revenue_usd": 0.0,
+      "usable": false
+    },
+    "Li": {
+      "cut": null,
+      "cut_pH": null,
+      "purity": 0.9537395735545248,
+      "recovery": 0.9606423410852714,
+      "recovered_mol": 0.19369,
+      "revenue_usd": 0.02016603435,
+      "usable": true,
+      "source": "final_brine"
+    }
+  },
+  "revenue_usd": 0.21295554100919997,
+  "costs": {
+    "reagent_cost_usd": 0.042436999961736464,
+    "reagent_1_mol": 0.30856249760852866,
+    "reagent_2_mol": 1.5,
+    "neutralize_cost_usd": 0.011798573747200001,
+    "neutralize_eq": 1.4748217184,
+    "heat_cost_usd": 0.0,
+    "ph_energy_cost_usd": 0.11797919999999998,
+    "ph_init": 3.4785,
+    "ph_final": 9.37746,
+    "step_penalty_usd": 0.11,
+    "n_bm_steps": 1,
+    "n_reagent_1_steps": 2,
+    "n_reagent_2_steps": 8,
+    "filtration_cost_usd": 0.05,
+    "total_cost_usd": 0.33221477370893643
+  },
+  "net_profit_usd": -0.11925923269973646,
+  "price_weighted_score": 0.21200266692984365,
+  "stage1_csv": "stage_1_NaOH.csv",
+  "stage2_csv": "stage_2_Na2CO3.csv"
+}
